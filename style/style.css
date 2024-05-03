@@ -87,26 +87,120 @@ header {
   width: 35%;
 }
 
-.fotos-diseno li {
-  margin-bottom: 10px;
+.overlay3 {
+  width: 100%;
+  height: 80%;
+  position:relative;
+}
+
+.overlay4 {
+  font-size: 18px;
+  z-index: 1;
+  position: absolute;
+  left: 0%;
+  margin-right: 0%;
+  text-align: left;
+  transform: translate(75%, -140%);
+  padding: 0.5%;
+  background-color: transparent;
+  top: 0%;
+  height: 20%;
+  width: 50%;
+}
+
+.overlay4 br {
+  display: flex;
 }
 
 .conectaUDP {
   margin-top: 20px;
   width: 35%;
- 
+}
+
+.overlay5 {
+  width: 100%;
+  height: 80%;
+  position:relative;
+}
+
+.overlay6 {
+  font-size: 18px;
+  z-index: 1;
+  position: absolute;
+  left: 0%;
+  margin-right: 0%;
+  text-align: left;
+  transform: translate(75%, -195%);
+  padding: 0.5%;
+  background-color: transparent;
+  top: 0%;
+  height: 20%;
+  width: 50%;
+}
+
+.overlay6 br {
+  display: flex;
 }
 
 .visualizacion {
   margin-top: 20px;
   width: 45%;
- 
+}
+
+.overlay7 {
+  width: 100%;
+  height: 80%;
+  position:relative;
+}
+
+.overlay8 {
+  font-size: 18px;
+  z-index: 1;
+  position: absolute;
+  left: 0%;
+  margin-right: 0%;
+  text-align: left;
+  transform: translate(75%, -450%);
+  padding: 0.5%;
+  background-color: transparent;
+  top: 0%;
+  height: 20%;
+  width: 50%;
+}
+
+.overlay8 br {
+  display: flex;
 }
 
 .renunciaSacra {
   margin-top: 20px;
   width: 45%;
   transform: translate(-7%, 0%);
+}
+
+.overlay9 {
+  width: 100%;
+  height: 80%;
+  position:relative;
+}
+
+.overlay10 {
+  font-size: 18px;
+  z-index: 1;
+  position: absolute;
+  left: 0%;
+  margin-right: 0%;
+  text-align: left;
+  transform: translate(75%, -2600%);
+  padding: 0.5%;
+  background-color: transparent;
+  top: 0%;
+  height: 20%;
+  width: 50%;
+}
+
+.overlay10 br {
+  display: flex;
 }
   
 footer {
