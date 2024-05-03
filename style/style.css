@@ -85,7 +85,10 @@ header {
 .diseno {
   margin-top: 20px;
   width: 35%;
+}
 
+.fotos-diseno li {
+  margin-bottom: 10px;
 }
 
 .conectaUDP {
