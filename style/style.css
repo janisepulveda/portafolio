@@ -33,7 +33,7 @@ header {
     justify-content: space-between;
   }
 
-img {
+.processing {
     width: 100%; 
     height: 80vh; 
     object-fit: fill; 
@@ -76,14 +76,34 @@ img {
     font-size: 23px;
     font-weight: 400;
     word-wrap: break-word;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     text-align: left;
     margin-left: 18px;
     margin-top: 60px;
   }
 
-.disenoAbierto {
-  font-size: 23px;
+.diseno {
+  margin-top: 20px;
+  width: 35%;
+
+}
+
+.conectaUDP {
+  margin-top: 20px;
+  width: 35%;
+ 
+}
+
+.visualizacion {
+  margin-top: 20px;
+  width: 45%;
+ 
+}
+
+.renunciaSacra {
+  margin-top: 20px;
+  width: 45%;
+  transform: translate(-7%, 0%);
 }
   
 footer {
