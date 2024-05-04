@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -11,13 +12,15 @@ body {
     margin: 0;
     padding: 0;
     color: #ffffff;
-  }
+    font-family: 'Inter', sans-serif;
+}
   
 header {
     padding: 20px;
   }
 
 .logo {
+  font-family: 'Inter', sans-serif;
     font-size: 23px;
     font-weight: 400;
     word-wrap: break-word;
@@ -25,6 +28,7 @@ header {
   }
 
 .links {
+  font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 400;
     word-wrap: break-word;
@@ -73,6 +77,7 @@ header {
   }
  
 .trabajos {
+    font-family: 'Inter', sans-serif;
     font-size: 23px;
     font-weight: 400;
     word-wrap: break-word;
@@ -94,6 +99,7 @@ header {
 }
 
 .overlay4 {
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   z-index: 1;
   position: absolute;
@@ -124,6 +130,7 @@ header {
 }
 
 .overlay6 {
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   z-index: 1;
   position: absolute;
@@ -154,6 +161,7 @@ header {
 }
 
 .overlay8 {
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   z-index: 1;
   position: absolute;
@@ -185,6 +193,7 @@ header {
 }
 
 .overlay10 {
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   z-index: 1;
   position: absolute;
@@ -208,4 +217,9 @@ footer {
     color: white;
     padding: 20px;
     text-align: right;
+  }
+
+  .disAbierto {
+    width: 100%;
+    height: auto;
   }
