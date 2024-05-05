@@ -6,7 +6,7 @@
     font-family: 'Inter', sans-serif;
     color: #ffffff;
     background-color: #000000;
-  }
+}
 
 body {
     margin: 0;
@@ -76,10 +76,10 @@ header {
   width: 100%;
   }
  
-.trabajos {
+.trabajos h4 {
     font-family: 'Inter', sans-serif;
     font-size: 23px;
-    font-weight: 400;
+    font-weight: normal;
     word-wrap: break-word;
     margin-bottom: 20px;
     text-align: left;
@@ -90,12 +90,14 @@ header {
 .diseno {
   margin-top: 20px;
   width: 35%;
+  margin-left: 18px;
 }
 
 .overlay3 {
   width: 100%;
   height: 80%;
   position:relative;
+  margin-left: 18px;
 }
 
 .overlay4 {
@@ -116,6 +118,7 @@ header {
 
 .overlay4 br {
   display: flex;
+  margin-left: 18px;
 }
 
 .conectaUDP {
@@ -217,18 +220,67 @@ footer {
     color: white;
     padding: 20px;
     text-align: right;
-  }
+}
 
-.titulo {
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  align-items: center;
+}
+
+.titulo h3 {
   font-family: 'Inter', sans-serif;
   font-size: 23px;
-  font-weight: 400;
+  font-weight: normal;
   word-wrap: break-word;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   text-align: left;
   margin-left: 20px;
-  margin-top: 60px;
+  margin-top: 10px;
 }
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  margin-right: -100px;
+  margin-left: 10px;
+}
+.column img {
+  margin-top: 10px;
+  width: 80%;
+  height: auto;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.overlay11 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  z-index: 1;
+  position: absolute;
+  left: 0%;
+  margin-right: 0%;
+  text-align: left;
+  transform: translate(140%, 437%);
+  padding: 0.5%;
+  background-color: transparent;
+  top: 0%;
+  height: 20%;
+  width: 40%;
+}
+
+.ovelay12 {
+  width: 100%;
+  height: auto;
+  position:relative;
+}
+
 
 /* .talleres {
   margin-top: 20px;
