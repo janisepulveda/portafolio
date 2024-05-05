@@ -1,66 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
-    color: #ffffff;
-    background-color: #000000;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  background-color: #000000;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
 }
-  
+
 header {
-    padding: 20px;
-  }
+  padding: 20px;
+}
 
 .logo {
   font-family: 'Inter', sans-serif;
-    font-size: 23px;
-    font-weight: 400;
-    word-wrap: break-word;
-    margin-bottom: 10px;
-  }
+  font-size: 23px;
+  font-weight: 400;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
 
 .links {
   font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    word-wrap: break-word;
-    text-align: left;
-    margin-top: 10px;
-    justify-content: space-between;
-  }
+  font-size: 13px;
+  font-weight: 400;
+  word-wrap: break-word;
+  text-align: left;
+  margin-top: 10px;
+  justify-content: space-between;
+}
 
 .processing {
-    width: 100%; 
-    height: 80vh; 
-    object-fit: fill; 
-    align-items: center;
-  }
+  width: 100%;
+  height: 80vh;
+  object-fit: fill;
+  align-items: center;
+}
 
 [grid-pad="2"] {
-    padding: 1rem;
-  }
+  padding: 1rem;
+}
 
 [grid-col="3"] {
-    width: 25%;
-  }
+  width: 25%;
+}
 
 [grid-col] {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
 .overlay1 {
-    width: 100%;
-    height: 90%;
-    position:relative;
-  }
+  width: 100%;
+  height: 90%;
+  position: relative;
+}
 
 .overlay2 {
   z-index: 1;
@@ -74,18 +75,18 @@ header {
   top: 0%;
   height: 20%;
   width: 100%;
-  }
- 
+}
+
 .trabajos h4 {
-    font-family: 'Inter', sans-serif;
-    font-size: 23px;
-    font-weight: normal;
-    word-wrap: break-word;
-    margin-bottom: 20px;
-    text-align: left;
-    margin-left: 18px;
-    margin-top: 60px;
-  }
+  font-family: 'Inter', sans-serif;
+  font-size: 23px;
+  font-weight: normal;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 18px;
+  margin-top: 60px;
+}
 
 .diseno {
   margin-top: 20px;
@@ -96,7 +97,7 @@ header {
 .overlay3 {
   width: 100%;
   height: 80%;
-  position:relative;
+  position: relative;
   margin-left: 18px;
 }
 
@@ -129,7 +130,7 @@ header {
 .overlay5 {
   width: 100%;
   height: 80%;
-  position:relative;
+  position: relative;
 }
 
 .overlay6 {
@@ -160,7 +161,7 @@ header {
 .overlay7 {
   width: 100%;
   height: 80%;
-  position:relative;
+  position: relative;
 }
 
 .overlay8 {
@@ -192,7 +193,7 @@ header {
 .overlay9 {
   width: 100%;
   height: 80%;
-  position:relative;
+  position: relative;
 }
 
 .overlay10 {
@@ -214,12 +215,12 @@ header {
 .overlay10 br {
   display: flex;
 }
-  
+
 footer {
-    background-color: #000000;
-    color: white;
-    padding: 20px;
-    text-align: right;
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+  text-align: right;
 }
 
 .banner {
@@ -247,6 +248,7 @@ footer {
   margin-right: -100px;
   margin-left: 10px;
 }
+
 .column img {
   margin-top: 10px;
   width: 80%;
@@ -278,7 +280,7 @@ footer {
 .ovelay12 {
   width: 100%;
   height: auto;
-  position:relative;
+  position: relative;
 }
 
 
@@ -297,7 +299,7 @@ footer {
 .overlay12 {
   width: 100%;
   height: auto; */
-  /* position:relative; 
+/* position:relative; 
 }
 
 /* .overlay11 {
