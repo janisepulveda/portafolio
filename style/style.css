@@ -219,7 +219,47 @@ footer {
     text-align: right;
   }
 
-  .disAbierto {
-    width: 100%;
-    height: auto;
-  }
+.titulo {
+  font-family: 'Inter', sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left: 20px;
+  margin-top: 60px;
+}
+
+/* .talleres {
+  margin-top: 20px;
+  width: 35%;
+}
+
+.muestra {
+  margin-top: 20px;
+  width: 22.3%;
+  height: auto;
+  transform: translate(110%, -104.5%);
+}
+
+.overlay12 {
+  width: 100%;
+  height: auto; */
+  /* position:relative; 
+}
+
+/* .overlay11 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  z-index: 1;
+  position: absolute;
+  left: 0%;
+  margin-right: 0%;
+  text-align: left;
+  transform: translate(4%, 550%);
+  padding: 0.5%;
+  background-color: transparent;
+  top: 0%;
+  height: 20%;
+  width: 50%;
+} */
