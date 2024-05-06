@@ -45,11 +45,11 @@ header {
   align-items: center;
 }
 
-[grid-pad="2"] {
+[grid-pad='2'] {
   padding: 1rem;
 }
 
-[grid-col="3"] {
+[grid-col='3'] {
   width: 25%;
 }
 
@@ -63,7 +63,7 @@ header {
   position: relative;
 }
 
-.overlay2 {
+/* .overlay2 {
   z-index: 1;
   position: absolute;
   left: 330%;
@@ -73,8 +73,19 @@ header {
   padding: 0.5%;
   background-color: transparent;
   top: 0%;
-  height: 20%;
+  height: 10%;
   width: 100%;
+} */
+
+.acercaDe h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 23px;
+  font-weight: normal;
+  word-wrap: break-word;
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 18px;
+  margin-top: 60px;
 }
 
 .trabajos h4 {
@@ -258,7 +269,7 @@ footer {
 }
 
 .row::after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -320,7 +331,7 @@ footer {
 }
 
 .row::after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
