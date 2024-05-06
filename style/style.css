@@ -357,3 +357,15 @@ footer {
   height: auto;
   position: relative;
 }
+
+@media only screen and (max-width: 600px) {
+  p {
+    font-size: 2vw;
+  }
+  h5 {
+    font-size: 4vw;
+  }
+  a {
+    font-size: 2vw;
+  }
+}
