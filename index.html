@@ -4,85 +4,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>janis</title>
+  <title>Janis Sepulveda</title>
   <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
   <header>
-    <nav>
+    <nav class="navbar">
       <div class="logo">j a n i s</div>
       <div class="links">
         <a href="https://www.github.com/janisepulveda">GitHub</a>
         <a href="https://drive.google.com/file/d/1VjXop-U3t-fP9Hjou9lizdeznRGPZ0_f/view">CV</a>
-        <div grid-col="3" grid-pad="2" class>
-          <div class="overlay1">
-            <!-- <div class="overlay2">estudiante chilena de diseño trabajando con programación creativa y con interés en el
-              diseño de interfaz y experiencia de usuario.
-            </div> -->
-          </div>
-        </div>
-        <!-- <a href="https://drive.google.com/file/d/1VjXop-U3t-fP9Hjou9lizdeznRGPZ0_f/view">CV</a> -->
+        <a href="#acercaDe">Sobre mí</a>
+        <a href="#trabajos">Trabajos</a>
+      </div>
     </nav>
   </header>
+
   <img src="./assets/processing.gif" alt="processing" class="processing">
+
   <main>
-    <section class="acercaDe">
-      <h4>a c e r c a</h4>
+    <section class="acercaDe" id="acercaDe">
+      <h4>A c e r c a</h4>
       <div class="overlay3">
         <br>
-        estudiante chilena de diseño trabajando con programación creativa aplicadas a
-        interfaz y experiencia de usuario.
-        <br>
-      </div>  
-  </section>
-    <section class="trabajos">
-      <h4>t r a b a j o s</h4>
+        ¡Hola! Soy Janis, estudiante de Diseño Industrial con un enfoque creativo y comprometido hacia el diseño funcional y sostenible. Me encanta explorar ideas innovadoras que integren estética, funcionalidad y responsabilidad ambiental, siempre buscando que cada proyecto cuente una historia y aporte valor.
+        <br><br>
+        A través de mis estudios, he tenido la oportunidad de trabajar en proyectos que combinan creatividad, técnica y experimentación, desde el diseño de mobiliario sostenible hasta conceptos de moda experimental. Estoy en constante aprendizaje y siempre abierta a nuevos desafíos que me permitan crecer como diseñadora.
+        <br><br>
+        <h4 class="areasInteres">I n t e r é s</h4>
+        <ul>
+          <li>Diseño de mobiliario sostenible: Desarrollo de piezas funcionales y responsables, pensando en el ciclo de vida del producto.</li>
+          <li>Prototipado y fabricación: Experimentación con materiales y procesos para materializar ideas.</li>
+          <li>Diseño conceptual: Proyectos que mezclan storytelling, diseño y reflexión crítica.</li>
+        </ul>
+        <br><br>
+        <h4 class="visionDisenadora">V i s i ó n</h4>
+        <p>Creo que el diseño no solo debe resolver problemas, sino también ser consciente de su impacto en el entorno. Me interesa crear productos y soluciones que integren sostenibilidad, funcionalidad y un diseño atractivo, marcando la diferencia desde lo pequeño hasta lo grande.</p>
+      </div>
+    </section>
+
+    <section class="trabajos" id="trabajos">
+      <h4>T r a b a j o s</h4>
       <div class="fotos">
-        <img src="./assets/disenoAbierto.jpg" alt="diseno" class="diseno">
-        <div class="overlay3">
-          <div class="overlay4">
-            <h5>App Diseño Abierto UDP</h5>
-            <p>
-            App creada para navegar la muestra anual de Diseño UDP y construir un registro histórico del evento.
-            </p>
+        <div class="trabajo">
+          <a href="disenoAbierto.html">
+            <img src="./assets/disenoAbierto.jpg" alt="diseno" class="diseno">
+          </a>
+        </div>
+        
+        <div class="trabajo">
+          <a href="conectaUDP.html">
+            <img src="./assets/conectaUDP.jpg" alt="conectaUDP" class="conectaUDP">
+          </a>
+        </div>
 
-            <a href="disenoAbierto.html">Ver más</a>
-          </div>
-          <img src="./assets/conectaUDP.jpg" alt="conectaUDP" class="conectaUDP">
-          <div class="overlay5">
-            <div class="overlay6">
-              <h5>Propuesta de mejora App ConectaUDP</h5>
-              <p>
-              Propuesta de la App institucional ConectaUDP con mejoras en su interfaz para facilitar su uso en los
-              usuarios.
-            </p>
-
-              <a href="conectaUDP.html">Ver más</a>
-            </div>
+        <div class="trabajo">
+          <a href="visualizacion.html">
             <img src="./assets/visualizacion.png" alt="visualizacion" class="visualizacion">
-            <div class="overlay7">
-              <div class="overlay8">
-              <h5>Visualización de datos</h5>
-              <p>
-                Propuesta de visualización de datos de Diseño UDP sobre el uso de tecnologías digitales en la
-                construcción de prototipos.
-              </p>
-                <!-- <a href="https://www.behance.net/gallery/116073775/App-Diseno-Abierto-UDP">Ver más</a> -->
-              </div>
-              <img src="./assets/renunciaSacra.jpg" alt="renunciaSacra" class="renunciaSacra">
-              <div class="overlay9">
-                <div class="overlay10">
-                <h5>Renuncia Sacra</h5>
-                <p>
-                  Esta serie fotográfica captura la metamorfosis en curso: una transformación personal y una
-                  emancipación espiritual.
-                </p>
-                  <!-- <a href="https://www.behance.net/gallery/116073775/App-Diseno-Abierto-UDP">Ver más</a> -->
-                </div>
-              </div>
+          </a>
+        </div>
+
+        <div class="trabajo">
+          <a href="renunciaSacra.html">
+            <img src="./assets/renunciaSacra.jpg" alt="renunciaSacra" class="renunciaSacra">
+          </a>
+        </div>
+      </div>
     </section>
   </main>
+
   <footer>
     <p>&copy; 2024 Janis</p>
   </footer>
