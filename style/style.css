@@ -5,14 +5,15 @@
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
-  color: #ffffff;
-  background-color: #000000;
+  color: #000000;
+  /* aqui se pone el cuadrado blanco en el navbar*/ 
+  background-color: #ffffff;
 }
 
 body {
   margin: 0;
   padding: 0;
-  color: #ffffff;
+  color: #000000;
   font-family: 'Inter', sans-serif;
   padding-top: 80px; /* Para evitar que el navbar fijo tape contenido */
 }
@@ -26,6 +27,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  color: #222222;
   background-color: #222222;
   position: fixed;
   top: 0;
@@ -46,7 +48,7 @@ header {
 }
 
 .links a {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
@@ -125,8 +127,8 @@ header {
 }
 
 footer {
-  background-color: #000000;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(167, 19, 19);
   padding: 20px;
   text-align: center;
 }
@@ -139,7 +141,7 @@ ul {
 .navbar input, .navbar textarea {
   background-color: transparent;
   border: none;
-  color: #ffffff;
+  color: #c31616;
   font-size: 16px;
   padding: 8px;
 }
@@ -226,8 +228,8 @@ ul {
 }
 
 footer {
-  background-color: #000000;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   padding: 20px;
   text-align: center;
 }
