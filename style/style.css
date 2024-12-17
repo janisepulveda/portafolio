@@ -14,7 +14,7 @@ body {
   padding: 0;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
-  padding-top: 80px; /* Añadido para no tapar contenido con el navbar fijo */
+  padding-top: 80px; /* Para evitar que el navbar fijo tape contenido */
 }
 
 header {
@@ -105,8 +105,6 @@ header {
   gap: 20px;
   width: 100vw;
   padding-top: 20px;
-  margin-left: 0;
-  margin-right: 0;
 }
 
 .trabajos .trabajo {
@@ -114,7 +112,7 @@ header {
 }
 
 .trabajos img {
-  width: 100%; /* Las imágenes ahora ocupan el 100% de su celda */
+  width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -148,11 +146,11 @@ ul {
 
 .banner {
   width: 100%;
-  height: 400px;
-  object-fit: cover;
+  height: 400px; /* Altura fija para los banners */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
 }
 
-/* Flexbox para la sección de imágenes y texto */
+/* Flexbox para imágenes y texto */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -163,8 +161,8 @@ ul {
 
 .column {
   flex: 1;
-  min-width: 250px; /* Ajustado para que las columnas no sean tan grandes */
-  max-width: 48%; /* Asegura que las imágenes estén al lado, no ocupen todo el ancho */
+  min-width: 250px;
+  max-width: 48%;
   position: relative;
 }
 
@@ -173,7 +171,7 @@ ul {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  object-fit: contain; /* Ajusta el tamaño de las imágenes manteniendo su relación de aspecto */
+  object-fit: contain;
 }
 
 .overlay11 {
@@ -238,12 +236,16 @@ footer {
   }
 
   .column {
-    min-width: 100%; /* Las columnas ocupan el 100% en pantallas pequeñas */
+    min-width: 100%;
     max-width: 100%;
   }
 
   .column img {
-    max-width: 90%; /* Reducir el tamaño de las imágenes en pantallas pequeñas */
-    margin-bottom: 20px; /* Espaciado entre las imágenes */
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .banner {
+    height: 250px; /* Ajuste responsivo para banners en pantallas pequeñas */
   }
 }
