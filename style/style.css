@@ -6,16 +6,13 @@
   padding: 0;
   font-family: 'Inter', sans-serif;
   color: #000000;
-  /* aqui se pone el cuadrado blanco en el navbar*/ 
-  background-color: #ffffff;
+  background-color: #ffffff00;
 }
 
 body {
   margin: 0;
   padding: 0;
-  color: #000000;
-  font-family: 'Inter', sans-serif;
-  padding-top: 80px; /* Para evitar que el navbar fijo tape contenido */
+  padding-top: 80px; /* Para evitar que el navbar tape contenido */
 }
 
 header {
@@ -27,8 +24,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  color: #222222;
   background-color: #222222;
+  color: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
@@ -48,7 +45,7 @@ header {
 }
 
 .links a {
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
@@ -60,189 +57,89 @@ header {
   color: #83246e;
 }
 
-.processing {
+.banner {
   width: 100%;
-  height: 80vh;
-  object-fit: fill;
-  align-items: center;
-}
-
-.main-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 40px;
-  padding: 10px;
-  justify-items: center;
-}
-
-.acercaDe,
-.trabajos {
-  padding: 10px;
-  width: 100%;
-  max-width: 100%;
-  padding-left: 40px;
-}
-
-.acercaDe h4,
-.trabajos h4 {
-  font-family: 'Inter', sans-serif;
-  font-size: 23px;
-  font-weight: normal;
-  word-wrap: break-word;
-  margin-bottom: 20px;
-  margin-top: 0;
-}
-
-.acercaDe {
-  margin-bottom: 30px;
-}
-
-.trabajos {
-  margin-top: 30px;
-}
-
-.trabajos .fotos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  width: 100vw;
-  padding-top: 20px;
-}
-
-.trabajos .trabajo {
-  position: relative;
-}
-
-.trabajos img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  height: 400px;
   object-fit: cover;
 }
 
-.trabajos img:hover {
-  transform: scale(1.05);
-}
-
-footer {
-  background-color: #ffffff;
-  color: rgb(167, 19, 19);
-  padding: 20px;
-  text-align: center;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.navbar input, .navbar textarea {
-  background-color: transparent;
-  border: none;
-  color: #c31616;
-  font-size: 16px;
-  padding: 8px;
-}
-
-.banner {
-  width: 100%;
-  height: 400px; /* Altura fija para los banners */
-  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
-}
-
 .titulo {
-  text-align: center; /* Centra el texto horizontalmente */
-  margin-top: 20px; /* Espacio superior opcional */
-  margin-bottom: 20px; /* Espacio inferior opcional */
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .titulo h3 {
-  margin: 0; /* Elimina márgenes por defecto del h3 */
-  font-size: 24px; /* Ajusta el tamaño de la fuente si es necesario */
+  margin: 0;
+  font-size: 24px;
 }
 
 .row {
-  display: flex; /* Activa Flexbox */
-  justify-content: space-between; /* Espacio entre columnas */
-  gap: 20px; /* Espacio entre columnas */
-  align-items: flex-start; /* Alinea al inicio verticalmente */
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* Espacio entre columnas */
+  padding: 0 40px; /* Alinear con el logo del navbar */
+  align-items: flex-start;
 }
 
 .column {
-  flex: 1; /* Las columnas ocupan el mismo espacio */
-  min-width: 300px; /* Evita que sean muy pequeñas */
+  display: flex; /* Cambia las columnas para que actúen como contenedores flexibles */
+  gap: 20px; /* Espacio entre las imágenes */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+  align-items: center; /* Alinea las imágenes verticalmente */
 }
 
 .column img {
-  width: 50%;          /* Las imágenes ocupan todo el contenedor */
-  height: auto;         /* Mantiene la proporción */
-  margin: 20px 40px;    /* Espaciado: arriba/abajo 20px, lados 40px */
-  border-radius: 10px;  /* Esquinas redondeadas */
-  display: block;       /* Elimina espacio adicional de las imágenes en línea */
+  width: 250px; /* Tamaño fijo para las imágenes */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 10px; /* Bordes redondeados */
+  display: block;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
 }
 
 .texto-estatico {
-  flex: 1; /* La columna del texto también ocupa espacio */
-  padding: 20px; /* Espaciado interno */
-  text-align: justify; /* Justificar el texto */
+  flex: 1;
+  padding: 20px;
+  text-align: justify;
 }
 
 .texto-estatico p {
-  margin: 0; /* Elimina márgenes extra */
-  line-height: 1.5; /* Espaciado entre líneas */
+  margin: 0;
+  line-height: 1.6;
 }
 
 .texto-estatico a {
-  color: #83246e; /* Personaliza el color del enlace */
-  text-decoration: underline; /* Enlace subrayado */
-}
-
-.overlay11 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.overlay11:hover {
-  opacity: 1;
-}
-
-.overlay12 {
-  font-size: 16px;
-  line-height: 1.5;
-  max-width: 700px;
-  text-align: justify;
+  color: #83246e;
+  text-decoration: underline;
 }
 
 footer {
   background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  color: #000000;
   padding: 20px;
   text-align: center;
 }
 
 /* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .row {
+    flex-direction: column; /* Cambiar a formato vertical en pantallas pequeñas */
+    align-items: center;
+  }
+
+  .column {
+    flex-direction: column; /* Organiza imágenes en una columna */
+  }
+
+  .titulo h3 {
+    font-size: 20px; /* Reducir tamaño del título en pantallas pequeñas */
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .logo {
-    margin-bottom: 10px;
   }
 
   .links {
@@ -250,28 +147,12 @@ footer {
     gap: 10px;
   }
 
-  .trabajos img {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .main-content {
-    grid-template-columns: 1fr;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .column {
-    min-width: 100%;
-    max-width: 100%;
-  }
-
   .column img {
-    max-width: 90%;
-    margin-bottom: 20px;
+    width: 90%; /* Ajustar tamaño de las imágenes */
+    margin: 0 auto 20px; /* Centrar imágenes en pantallas pequeñas */
   }
 
   .banner {
-    height: 250px; /* Ajuste responsivo para banners en pantallas pequeñas */
+    height: 250px; /* Ajuste responsivo del banner */
   }
 }
