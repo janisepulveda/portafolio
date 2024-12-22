@@ -74,6 +74,45 @@ header {
   font-size: 24px;
 }
 
+.acercaDe, .trabajos {
+  padding: 40px; /* Añadido padding consistente */
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 20px; /* Espacio debajo de los títulos */
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.acercaDe-contenido {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 40px;
+  align-items: stretch; /* Asegura que los elementos ocupen la misma altura */
+}
+
+.texto-acerca {
+  flex: 1;
+  text-align: justify;
+}
+
+.imagen-acerca {
+  flex: 0 0 40%; /* Imagen ocupa 40% */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.processing {
+  width: 100%; /* Ancho de la imagen */
+  height: 100%; /* Asegura que la imagen tenga la misma altura que el contenedor */
+  object-fit: cover;
+  border-radius: 10px; /* Bordes redondeados */
+  display: block;
+}
+
 .row {
   display: flex;
   justify-content: space-between;
@@ -120,7 +159,19 @@ footer {
   text-align: center;
 }
 
-/* Responsive Design */
+/* Trabajos - Alineación y formato */
+.fotos {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.trabajo {
+  width: 45%; /* Cada imagen ocupa el 45% del ancho */
+  margin-bottom: 20px;
+}
+
 @media only screen and (max-width: 768px) {
   .row {
     flex-direction: column; /* Cambiar a formato vertical en pantallas pequeñas */
@@ -133,6 +184,22 @@ footer {
 
   .titulo h3 {
     font-size: 20px; /* Reducir tamaño del título en pantallas pequeñas */
+  }
+
+  .acercaDe, .trabajos {
+    padding: 20px; /* Menos padding en pantallas pequeñas */
+  }
+
+  .fotos {
+    gap: 20px;
+  }
+
+  .trabajo {
+    width: 100%; /* Las imágenes ocuparán todo el ancho en pantallas pequeñas */
+  }
+
+  .processing {
+    height: 350px; /* Ajustar tamaño de la imagen en pantallas pequeñas */
   }
 }
 
