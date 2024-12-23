@@ -161,25 +161,39 @@ footer {
 
 /* Trabajos - Alineación y formato */
 .fotos {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres columnas por fila */
+  gap: 30px; /* Espaciado entre las imágenes */
+  width: 100%; /* Ancho de la galería completo */
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0 auto; /* Centra la galería */
 }
 
 .trabajo {
-  width: 45%; /* Cada imagen ocupa el 45% del ancho */
-  margin-bottom: 20px;
+  width: 100%; /* Las imágenes ocupan el 100% del ancho de su contenedor */
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-@media only screen and (max-width: 768px) {
-  .row {
-    flex-direction: column; /* Cambiar a formato vertical en pantallas pequeñas */
-    align-items: center;
-  }
+.trabajos img {
+  width: 100%; /* Las imágenes ocupan el 100% del ancho del contenedor */
+  height: auto; /* Mantiene la proporción */
+  border-radius: 10px; /* Opcional */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+  object-fit: cover; /* Ajusta la imagen al contenedor */
+  transition: transform 0.3s ease; /* Transición para el efecto de hover */
+}
 
-  .column {
-    flex-direction: column; /* Organiza imágenes en una columna */
+.trabajos img:hover {
+  transform: scale(1.05); /* Efecto de aumentar la imagen al pasar el ratón */
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+  .fotos {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas por fila en pantallas medianas */
+    gap: 20px;
   }
 
   .titulo h3 {
@@ -188,10 +202,6 @@ footer {
 
   .acercaDe, .trabajos {
     padding: 20px; /* Menos padding en pantallas pequeñas */
-  }
-
-  .fotos {
-    gap: 20px;
   }
 
   .trabajo {
@@ -221,5 +231,9 @@ footer {
 
   .banner {
     height: 250px; /* Ajuste responsivo del banner */
+  }
+
+  .fotos {
+    grid-template-columns: 1fr; /* Una columna por fila en pantallas muy pequeñas */
   }
 }
