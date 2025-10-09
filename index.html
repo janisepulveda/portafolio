@@ -1,87 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Janis Sepulveda</title>
-  <link rel="stylesheet" href="./style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Tu Nombre] | Portafolio de Desarrollo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">j a n i s</div>
-      <div class="links">
-        <a href="https://www.github.com/janisepulveda" target="_blank">GitHub</a>
-        <a href="./assets/cvJanis.pdf" target="_blank">CV</a>
-        <a href="#acercaDe">Sobre mí</a>
-        <a href="#trabajos">Trabajos</a>
-      </div>
-    </nav>
-  </header>
 
-  <!-- <img src="./assets/processing.gif" alt="processing" class="processing"> -->
+    <header class="header">
+        <div class="logo">
+            <a href="#">[Tu Nombre]</a>
+        </div>
+        <nav class="navbar">
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-  <main>
-    <section class="acercaDe" id="acercaDe">
-      <h4>Acerca</h4>
-      <div class="acercaDe-contenido">
-        <div class="texto-acerca">
-          ¡Hola! Soy Janis, estudiante de Diseño Industrial con un enfoque creativo y comprometido hacia el diseño funcional y sostenible. Me encanta explorar ideas innovadoras que integren estética, funcionalidad y responsabilidad ambiental, siempre buscando que cada proyecto cuente una historia y aporte valor.
-          <br><br>
-          A través de mis estudios, he tenido la oportunidad de trabajar en proyectos que combinan creatividad, técnica y experimentación, desde el diseño de mobiliario sostenible hasta conceptos de moda experimental. Estoy en constante aprendizaje y siempre abierta a nuevos desafíos que me permitan crecer como diseñadora.
-          <br><br>
-          <h4 class="areasInteres">Interés</h4>
-          <ul>
-            <li>Diseño de mobiliario sostenible: Desarrollo de piezas funcionales y responsables, pensando en el ciclo de vida del producto.</li>
-            <li>Prototipado y fabricación: Experimentación con materiales y procesos para materializar ideas.</li>
-            <li>Diseño conceptual: Proyectos que mezclan storytelling, diseño y reflexión crítica.</li>
-          </ul>
-          <br><br>
-          <h4 class="visionDisenadora">Visión</h4>
-          <p>Creo que el diseño no solo debe resolver problemas, sino también ser consciente de su impacto en el entorno. Me interesa crear productos y soluciones que integren sostenibilidad, funcionalidad y un diseño atractivo, marcando la diferencia desde lo pequeño hasta lo grande.</p>
-        </div>
-        <div class="imagen-acerca">
-          <img src="./assets/grilla.gif" alt="processing" class="processing">
-        </div>
-      </div>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hola, soy [Tu Nombre] 👋</h1>
+                <p class="subtitle">Desarrollador de Software enfocado en [Tu especialidad principal].</p>
+                <p class="description">
+                    Me especializo en la creación de aplicaciones web modernas y funcionales.
+                    Actualmente explorando [alguna tecnología o interés].
+                </p>
+                <div class="hero-links">
+                    <a href="https://es.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.github.dev/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/300" alt="Foto de [Tu Nombre]">
+            </div>
+        </section>
 
-    <section class="trabajos" id="trabajos">
-      <h4>Trabajos</h4>
-      <div class="fotos">
-        <div class="trabajo">
-          <a href="disenoAbierto.html">
-            <img src="./assets/disenoAbierto.jpg" alt="diseno" class="diseno">
-          </a>
-        </div>
+        <section id="proyectos" class="projects-section">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 1">
+                    <div class="project-info">
+                        <h3>Nombre del Proyecto 1</h3>
+                        <p>Descripción breve del proyecto. Explica qué problema resuelve y cuál fue tu contribución principal.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>CSS</span>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Ver Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" target="_blank">Código <i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 2">
+                    <div class="project-info">
+                        <h3>Nombre del Proyecto 2</h3>
+                        <p>Descripción breve del proyecto. Explica qué problema resuelve y cuál fue tu contribución principal.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Ver Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" target="_blank">Código <i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <section id="sobre-mi" class="about-section">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <p>
+                    Soy un desarrollador con experiencia en [menciona tus años de experiencia o principales habilidades]. Me encanta resolver problemas complejos y aprender constantemente sobre nuevas tecnologías. Mi objetivo es construir productos que no solo funcionen bien, sino que también ofrezcan una gran experiencia de usuario.
+                </p>
+                <p>
+                    Cuando no estoy programando, me gusta [menciona un hobby o interés], lo que me ayuda a mantenerme creativo y con una perspectiva fresca.
+                </p>
+            </div>
+        </section>
         
-        <div class="trabajo">
-          <a href="conectaUDP.html">
-            <img src="./assets/conectaUDP.jpg" alt="conectaUDP" class="conectaUDP">
-          </a>
-        </div>
+        <section id="contacto" class="contact-section">
+            <h2 class="section-title">Contacto</h2>
+            <p>¿Interesado en colaborar? ¡Envíame un mensaje!</p>
+            <a href="mailto:[tu.email@ejemplo.com]" class="contact-button">
+                <i class="fa-solid fa-envelope"></i> Di Hola
+            </a>
+        </section>
+    </main>
 
-        <div class="trabajo">
-          <a href="visualizacion.html">
-            <img src="./assets/visualizacion.png" alt="visualizacion" class="visualizacion">
-          </a>
-        </div>
+    <footer class="footer">
+        <p>&copy; 2025 - [Tu Nombre]. Todos los derechos reservados.</p>
+    </footer>
 
-        <div class="trabajo">
-          <a href="renunciaSacra.html">
-            <img src="./assets/renunciaSacra.jpg" alt="renunciaSacra" class="renunciaSacra">
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>&copy; 2024 Janis</p>
-  </footer>
 </body>
-
 </html>
