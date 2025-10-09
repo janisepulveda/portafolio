@@ -1,19 +1,20 @@
-/* ===== ESTILOS GLOBALES ===== */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "bricolage-grotesque", sans-serif;
   background: #ffffff;
   color: #111;
   overflow-x: hidden;
 }
 
-/* ===== ENCABEZADO ===== */
+/* ===== HEADER ===== */
 .main-header {
   width: 100%;
   max-width: 1200px;
   margin: 60px auto 0 auto;
   padding: 35px 30px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .header-content {
@@ -28,21 +29,31 @@ body {
   display: block;
 }
 
+.header-text h1 {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
 .header-text p {
   font-size: 1.5rem;
   margin: 10px 0 0 0;
   font-weight: 300;
   max-width: 900px;
-  line-height: 1.6;
 }
 
 .main-nav {
   position: absolute;
-  top: 35px;
+  top: 20px;
   right: 40px;
+  margin: 0;
+  align-self: unset;
 }
 
 .main-nav ul {
+  display: flex;
+  gap: 28px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -53,32 +64,37 @@ body {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 400;
-  transition: color 0.2s;
+  transition: color 0.2s, font-weight 0.2s;
 }
 
 .main-nav li a:hover {
   color: #ff85ee;
+  font-weight: 700;
 }
 
-/* ===== ESTILOS PARA LINKS DESTACADOS ===== */
-.insta-link, .rafita-studio {
+/* ===== LINKS DESTACADOS ===== */
+.insta-link,
+.mateo-arce,
+.rafita-studio,
+.pink-link {
   color: #ff85ee;
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 500;
   transition: color 0.15s;
 }
-
-.insta-link:hover, .rafita-studio:hover {
+.insta-link:hover,
+.mateo-arce:hover,
+.rafita-studio:hover,
+.pink-link:hover {
   color: #e84ab8;
   text-decoration-thickness: 2px;
 }
 
-/* ===== GALERÍA DE PROYECTOS (MODIFICADA A GRID) ===== */
+/* ===== GALERÍA DE PROYECTOS ===== */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas iguales */
-  gap: 20px;
+  column-count: 3;
+  column-gap: 15px;
   padding: 20px;
   max-width: 1200px;
   margin: 40px auto;
@@ -87,7 +103,8 @@ body {
 
 .gallery a {
   display: block;
-  text-decoration: none;
+  break-inside: avoid;
+  margin-bottom: 15px;
 }
 
 .gallery img,
@@ -95,31 +112,313 @@ body {
   width: 100%;
   border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
   display: block;
+  object-fit: contain;
   background: #eee;
 }
 
 .gallery img:hover,
 .gallery video:hover {
-  transform: scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: scale(1.05);
 }
 
+/* ===== SECCION DE PROYECTOS ===== */
+.project-page {
+  max-width: 900px;
+  margin: 70px auto 80px auto;
+  padding: 0 28px;
+  background: #fff;
+}
 
-/* ===== PIE DE PÁGINA ===== */
+.project-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 0 0 12px 0;
+  color: #111;
+  line-height: 1.1;
+}
+
+.project-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 36px;
+  letter-spacing: 0;
+}
+
+.project-description {
+  font-size: 1.18rem;
+  color: #363636;
+  margin-bottom: 48px;
+  line-height: 1.7;
+  max-width: 1000px;
+}
+
+.project-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.project-gallery img,
+.project-gallery video {
+  width: 70%;
+  max-width: 100%;
+  border-radius: 0;
+  background: #eee;
+  display: block;
+  margin: 0 auto;
+  box-shadow: none;
+  transition: transform 0.23s cubic-bezier(0.4, 1.4, 0.6, 1);
+}
+
+.project-gallery img:hover,
+.project-gallery video:hover {
+  transform: scale(1.018);
+}
+
+/* ===== SECCION ABOUT ===== */
+.about-page {
+  max-width: 900px;
+  margin: 60px auto 80px auto;
+  padding: 0 28px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  flex-direction: row;
+  width: 100%;
+}
+
+.about-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #f2f2f2;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.07);
+  flex-shrink: 0;
+}
+
+.about-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 0 16px 0;
+  color: #111;
+}
+
+.about-text-content p {
+  font-size: 1.18rem;
+  color: #363636;
+  margin: 0 0 10px 0;
+  line-height: 1.7;
+  max-width: 650px;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.93);
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  animation: lightbox-fade-in 0.2s;
+}
+@keyframes lightbox-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.lightbox-overlay.active {
+  display: flex;
+}
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 18px;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.22);
+  background: #fff;
+  object-fit: contain;
+}
+.lightbox-close {
+  position: fixed;
+  top: 32px;
+  right: 40px;
+  font-size: 2.6rem;
+  color: #fff;
+  cursor: pointer;
+  font-family: Arial, sans-serif;
+  z-index: 10000;
+  text-shadow: 0 2px 8px #000, 0 0 24px #e84ab8;
+  transition: color 0.15s;
+}
+.lightbox-close:hover {
+  color: #ff85ee;
+}
+
+/* ===== FOOTER ===== */
 .site-footer {
   width: 100%;
   text-align: center;
   padding: 28px 0 22px 0;
   font-size: 1rem;
   color: #bbb;
+  background: #fff;
+  letter-spacing: 0.03em;
+  font-weight: 400;
   border-top: 1px solid #eee;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 
-/* ===== ESTILOS PARA POSIBLES ILUSTRACIONES DE FONDO ===== */
-/* Este div está en el HTML, por si en el futuro quieres agregar animaciones */
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+@media (max-width: 1024px) {
+  .gallery {
+    column-count: 3;
+  }
+}
+@media (max-width: 900px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .main-nav {
+    margin-left: 0;
+    margin-top: 20px;
+    align-self: auto;
+  }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
+  }
+  .about-avatar {
+    width: 120px;
+    height: 120px;
+  }
+  .about-title {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  .about-text-content p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+@media (max-width: 700px) {
+  .project-page {
+    margin: 28px auto 36px auto;
+    padding: 0 8px;
+  }
+  .project-title {
+    font-size: 1.7rem;
+    margin-bottom: 8px;
+  }
+  .project-subtitle {
+    font-size: 1rem;
+    margin-bottom: 18px;
+  }
+  .project-description {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+  .project-gallery {
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .lightbox-close {
+    top: 12px;
+    right: 16px;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .main-header,
+  .gallery {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+  .gallery {
+    column-count: 1;
+    margin-top: 24px;
+    padding: 0 10px 30px 10px;
+  }
+  .main-nav ul {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .logo {
+    width: 70px;
+  }
+  .header-text h1 {
+    font-size: 1.4rem;
+  }
+  .header-text p {
+    font-size: 1rem;
+  }
+  .site-footer {
+    font-size: 0.95rem;
+    padding: 19px 0 12px 0;
+    margin-top: 30px;
+  }
+}
+
+.home-link {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #040404;
+  text-decoration: none;
+  text-underline-offset: 4px;
+  padding: 7px 18px 7px 10px;
+  transition: background 0.15s, color 0.15s;
+  z-index: 10;
+}
+.home-link:hover {
+  color: #ff85ee;
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .home-link {
+    top: 14px;
+    left: 10px;
+    font-size: 1rem;
+    padding: 6px 14px 6px 7px;
+  }
+}
+
+/* ==== ILUSTRACIONES DE FONDO ANIMADAS ==== */
 #bg-illustrations {
   position: fixed;
   inset: 0;
@@ -128,35 +427,21 @@ body {
   pointer-events: none;
   z-index: -1;
   overflow: hidden;
+  opacity: 0.5 !important;
 }
-
-/* ===== DISEÑO RESPONSIVO (PARA CELULARES Y TABLETS) ===== */
-@media (max-width: 900px) {
-  .header-content {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .main-nav {
-    position: static; /* La navegación se mueve al flujo normal */
-    margin-top: 20px;
-  }
+.bg-illustration {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s, transform 1.2s;
+  will-change: opacity, transform;
+  max-width: 250px;
+  max-height: 250px;
 }
-
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
-  }
-  .header-text p {
-    font-size: 1.2rem;
-  }
-}
-
 @media (max-width: 600px) {
-  .main-header, .gallery {
-    padding: 20px 15px;
-    margin-top: 30px;
-  }
-  .logo {
-    width: 100px;
+  .bg-illustration {
+    max-width: 90px;
+    max-height: 90px;
   }
 }
