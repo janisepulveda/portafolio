@@ -1,248 +1,155 @@
-/* --- VARIABLES Y CONFIGURACIÓN GLOBAL --- */
-:root {
-    --color-fondo: #f8f9fa;
-    --color-texto: #212529;
-    --color-primario: #007bff;
-    --color-tarjeta: #ffffff;
-    --sombra: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
+/* === GENERAL === */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
-    line-height: 1.7;
+  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  margin: 0;
+  color: #111;
+  background: #fff;
 }
 
-/* --- ESTILOS GENERALES Y CONTENEDORES --- */
-a {
-    color: var(--color-primario);
-    text-decoration: none;
+/* === HEADER === */
+header {
+  background: white;
+  border-bottom: 1px solid #ddd;
+  padding: 1.2rem 2rem;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* --- ENCABEZADO Y NAVEGACIÓN --- */
-.header {
-    background-color: var(--color-tarjeta);
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+nav a {
+  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 
-.header .logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--color-texto);
+nav h1 {
+  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
 }
 
-.header .navbar a {
-    font-size: 1.1rem;
-    margin-left: 1.5rem;
-    color: var(--color-texto);
-    font-weight: 500;
-    transition: color 0.3s;
+/* === GRID === */
+main.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 50vh 50vh;
+  height: calc(100vh - 80px);
+  width: 100%;
 }
 
-.header .navbar a:hover {
-    color: var(--color-primario);
+/* === BLOQUES === */
+.block {
+  position: relative; /* mantiene referencias internas */
+  text-decoration: none;
+  color: #000;
+  overflow: hidden; /* evita desbordes */
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* --- SECCIÓN HERO --- */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 6rem 5%;
-    max-width: 1200px;
-    margin: auto;
-    gap: 2rem;
+.block:hover {
+  transform: scale(1.01);
+  filter: brightness(1.1);
+  cursor: pointer;
 }
 
-.hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+.block {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+  overflow: hidden;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.hero-content .subtitle {
-    font-size: 1.5rem;
-    color: #495057;
-    margin-bottom: 1.5rem;
+.block h2 {
+  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  font-weight: 400;
+  font-size: 2.9rem;
+  margin: 0;
+  line-height: 0.8;
+  letter-spacing: -1px;
+  z-index: 2;
 }
 
-.hero-content .description {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin-bottom: 2rem;
+/* Lista de proyectos: independiente del h2 */
+.block ul {
+  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: right;
+  z-index: 2;
 }
 
-.hero-links a {
-    background-color: var(--color-primario);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 8px;
-    margin-right: 1rem;
-    font-weight: 600;
-    transition: background-color 0.3s;
+/* === COLORES Y PLACEHOLDERS === */
+.industrial {
+  background: #8f8f8f;
+  grid-column: 1;
+  grid-row: 1; /* <-- antes: 1 / span 2  */
 }
 
-.hero-links a:hover {
-    background-color: #0056b3;
+.placeholder1 {
+  background: #cfcfcf;
+  grid-column: 2;
+  grid-row: 1;
 }
 
-.hero-image img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: var(--sombra);
+.code {
+  background: #7b7b7b;
+  grid-column: 3;
+  grid-row: 1;
 }
 
-
-/* --- SECCIÓN DE PROYECTOS --- */
-.projects-section {
-    padding: 5rem 5%;
-    background-color: #e9ecef;
+.placeholder2 {
+  background: #a8a8a8;
+  grid-column: 1;
+  grid-row: 2; /* debajo de industrial, sin superponer */
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: auto;
+.ux {
+  background: #bdbdbd;
+  grid-column: 2;
+  grid-row: 2;
 }
 
-.project-card {
-    background-color: var(--color-tarjeta);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--sombra);
-    transition: transform 0.3s;
+.placeholder3 {
+  background: #e0e0e0;
+  grid-column: 3;
+  grid-row: 2;
 }
 
-.project-card:hover {
-    transform: translateY(-8px);
-}
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  main.grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
 
-.project-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
+  .block {
+    height: 60vh;
+  }
 
-.project-info {
-    padding: 1.5rem;
-}
+  .block h2 {
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.6rem;
+  }
 
-.project-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.project-tech {
-    margin: 1rem 0;
-}
-
-.project-tech span {
-    background-color: #e9ecef;
-    color: #495057;
-    padding: 0.3rem 0.8rem;
-    border-radius: 15px;
-    font-size: 0.85rem;
-    margin-right: 0.5rem;
-}
-
-.project-links {
-    margin-top: 1.5rem;
-}
-
-.project-links a {
-    font-weight: 600;
-    margin-right: 1.5rem;
-}
-
-.project-links i {
-    margin-left: 0.3rem;
-}
-
-
-/* --- SECCIÓN SOBRE MÍ Y CONTACTO --- */
-.about-section, .contact-section {
-    padding: 5rem 5%;
-    max-width: 800px;
-    margin: auto;
-    text-align: center;
-}
-
-.about-content p {
-    font-size: 1.15rem;
-    margin-bottom: 1.5rem;
-}
-
-.contact-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.contact-button {
-    background-color: var(--color-primario);
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.contact-button:hover {
-    background-color: #0056b3;
-}
-
-/* --- PIE DE PÁGINA --- */
-.footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: #e9ecef;
-    font-size: 0.9rem;
-}
-
-/* --- DISEÑO RESPONSIVO --- */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .hero-image img {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 2rem;
-    }
-
-    .header {
-        flex-direction: column;
-        gap: 1rem;
-    }
+  .block ul {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
 }
