@@ -25,30 +25,12 @@
       <div class="header-content">
         <img
           class="logo"
-          src="assets/mateoarce_logo.png"
-          alt="Logo Mateo Arce"
+          src="assets/logo.png"
+          alt="Logo"
         />
         <div class="header-text">
           <p>
-            Hi! I’m
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="insta-link"
-              >Mateo Arce</a
-            >
-            — a designer, illustrator, and programmer based in Chile. I
-            co-founded
-            <a
-              href="https://www.instagram.com/rafita.studio"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="insta-link rafita-studio"
-              >Rafita Studio</a
-            >, where I mix brand design, generative code, and way too many dog
-            drawings. I’m passionate about turning pixels into personality, code
-            into creativity, and dogs into... well, even cooler dogs.
+            aqui va mi presentacion
           </p>
         </div>
         <nav class="main-nav">
@@ -65,12 +47,12 @@
     <div class="gallery">
       <a href="projectos/conectaUDP.html">
         <video
-          src="assets/interactive-letters/interactive_letters01.mp4"
+          src="assets/conectaUDP.jpg"
           autoplay
           loop
           muted
           playsinline
-          poster="assets/interactive_letters01.jpg"
+          poster="assets/conectaUDP.jpg"
         ></video>
       </a>
       <a href="projectos/disenoAbierto.html">
@@ -86,102 +68,5 @@
     <footer class="site-footer">
       © 2025 Designed by Mateo Arce. All rights reserved.
     </footer>
-
-    <!-- ==== ILUSTRACIONES DE FONDO ANIMADAS ==== -->
-<script>
-const ilustraciones = [
-  "basket.png",
-  "dogger.png",
-  "Ilustración_sin_título 79.png",
-  "Ilustración_sin_título 80.png",
-  "Ilustración_sin_título 81.png",
-  "Ilustración_sin_título 86.png",
-  "Ilustración_sin_título 87.png",
-  "Ilustración_sin_título 88.png",
-  "Ilustración_sin_título 89.png",
-  "Recurso 11.png",
-  "Recurso 12.png",
-  "Recurso 13.png",
-  "Recurso 14.png",
-  "Recurso 15.png",
-  "Recurso 16.png",
-  "Recurso 17.png",
-  "Recurso 18.png",
-  "Recurso 19.png",
-  "Recurso 20.png",
-  "Recurso 21.png",
-  "Recurso 22.png",
-  "Recurso 23.png",
-  "Recurso 24.png",
-  "Recurso 25.png",
-  "Recurso 26.png",
-  "salchi_trompeta.png",
-  "skater 2.png",
-  "skater.png"
-];
-
-const fondoFolder = "assets/ilustraciones/";
-
-function randomBetween(a, b) {
-  return Math.random() * (b - a) + a;
-}
-
-function showRandomIllustration() {
-  // Tamaños aleatorios
-  const minSize = 80;
-  const maxSize = 260;
-  const size = randomBetween(minSize, maxSize);
-
-  // Elige ilustración y posición aleatoria (puede salirse un poco de los bordes)
-  const filename = ilustraciones[Math.floor(Math.random() * ilustraciones.length)];
-  const img = document.createElement('img');
-  img.src = fondoFolder + filename;
-  img.className = "bg-illustration";
-  img.style.opacity = "0";
-  img.style.width = `${size}px`;
-  img.style.height = "auto";
-
-  // Permitir que parte de la ilustración se salga de la ventana:
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  const offset = size * 0.5;
-  let x = randomBetween(-offset, vw - (size * 0.5) + offset);
-  let y = randomBetween(-offset, vh - (size * 0.5) + offset);
-
-  // Para mobile, menor tamaño y menos desborde
-  if (vw < 700) {
-    img.style.width = `${randomBetween(50, 100)}px`;
-    x = randomBetween(-30, vw - 70);
-    y = randomBetween(-30, vh - 70);
-  }
-
-  img.style.left = `${x}px`;
-  img.style.top = `${y}px`;
-
-  // Animación más rápida
-  img.style.transition = "opacity 0.6s, transform 0.6s";
-  img.style.transform = "scale(0.6) rotate(" + randomBetween(-20, 20) + "deg)";
-
-  document.getElementById('bg-illustrations').appendChild(img);
-
-  setTimeout(() => {
-    img.style.opacity = "1";
-    img.style.transform = "scale(1) rotate(" + randomBetween(-10, 10) + "deg)";
-  }, 50);
-
-  // Desaparece más rápido y elimina el nodo
-  setTimeout(() => {
-    img.style.opacity = "0";
-    img.style.transform = "scale(0.7) rotate(" + randomBetween(-60, 60) + "deg)";
-    setTimeout(() => img.remove(), 700);
-  }, randomBetween(2000, 2500)); 
-}
-
-// Lanzar varias ilustraciones al cargar la página para evitar fondo vacío
-for(let i=0; i<8; i++) setTimeout(showRandomIllustration, i*200);
-
-// Lanza ilustraciones muy frecuentemente para mantener la pantalla llena
-setInterval(showRandomIllustration, 300); // cada 0.3 segundos
-</script>
   </body>
 </html>

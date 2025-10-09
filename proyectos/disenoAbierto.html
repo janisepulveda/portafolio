@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nombre del Proyecto | Mateo Arce</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="../assets/android-chrome-192x192.png"
+    />
+  </head>
+  <body>
+    <main class="project-page">
+      <h1 class="project-title">Nombre del Proyecto</h1>
+      <div class="project-subtitle">Subtítulo o año</div>
+      <div class="project-description">
+        Breve descripción del proyecto. Puedes escribir aquí de qué se trata, herramientas utilizadas, contexto, etc.
+      </div>
+      <div class="project-gallery gallery-2col">
+        <!-- Ejemplo de imágenes, reemplaza o elimina según tu proyecto -->
+        <!-- <img src="../assets/tu-imagen-1.jpg" alt="Descripción imagen 1" /> -->
+        <!-- <img src="../assets/tu-imagen-2.jpg" alt="Descripción imagen 2" /> -->
+      </div>
+    </main>
+    
+    <!-- Lightbox HTML -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    </div>
+
+    <!-- Lightbox JS -->
+    <script>
+      // Lightbox para imágenes en .project-gallery
+      document.querySelectorAll('.project-gallery img').forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener('click', function () {
+          const overlay = document.getElementById('lightboxOverlay');
+          const lightboxImg = document.getElementById('lightboxImg');
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt || "";
+          overlay.classList.add('active');
+        });
+      });
+
+      // Cerrar lightbox al hacer click en overlay o botón cerrar
+      document.getElementById('lightboxOverlay').addEventListener('click', function (e) {
+        if (e.target === this || e.target.id === 'lightboxClose') {
+          this.classList.remove('active');
+          document.getElementById('lightboxImg').src = "";
+        }
+      });
+
+      // Cerrar lightbox con Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === "Escape") {
+          document.getElementById('lightboxOverlay').classList.remove('active');
+          document.getElementById('lightboxImg').src = "";
+        }
+      });
+    </script>
+  </body>
+</html>
