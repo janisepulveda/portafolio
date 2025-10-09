@@ -1,72 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mateo Arce</title>
-    <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="assets/android-chrome-192x192.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="192x192"
-      href="assets/android-chrome-192x192.png"
-    />
-  </head>
-  <body>
-    <div id="bg-illustrations"></div>
-    <!-- Header principal -->
-    <header class="main-header">
-      <div class="header-content">
-        <img
-          class="logo"
-          src="assets/logo.png"
-          alt="Logo"
-        />
-        <div class="header-text">
-          <p>
-            aqui va mi presentacion
-          </p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Tu Nombre] | Portafolio de Desarrollo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="#">[Tu Nombre]</a>
         </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="about.html">About</a></li>
-          </ul>
+        <nav class="navbar">
+            <a href="#proyectos">Proyectos</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#contacto">Contacto</a>
         </nav>
-      </div>
     </header>
 
-    <!-- Galería de proyectos -->
-<main>
-  <section id="work">
-    <div class="gallery">
-      <a href="projectos/conectaUDP.html">
-        <video
-          src="assets/conectaUDP.jpg"
-          autoplay
-          loop
-          muted
-          playsinline
-          poster="assets/conectaUDP.jpg"
-        ></video>
-      </a>
-      <a href="projectos/disenoAbierto.html">
-        <img src="assets/Lateral Image Editor/Logo/LIE_logo.png" alt="Lateral Image Editor" />
-      </a>
-          autoplay
-          loop
-          muted
-          playsinline
-        ></video>
-      </a>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Hola, soy [Tu Nombre] 👋</h1>
+                <p class="subtitle">Desarrollador de Software enfocado en [Tu especialidad principal].</p>
+                <p class="description">
+                    Me especializo en la creación de aplicaciones web modernas y funcionales.
+                    Actualmente explorando [alguna tecnología o interés].
+                </p>
+                <div class="hero-links">
+                    <a href="https://es.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://www.github.dev/" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://via.placeholder.com/300" alt="Foto de [Tu Nombre]">
+            </div>
+        </section>
+
+        <section id="proyectos" class="projects-section">
+            <h2 class="section-title">Proyectos Destacados</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 1">
+                    <div class="project-info">
+                        <h3>Nombre del Proyecto 1</h3>
+                        <p>Descripción breve del proyecto. Explica qué problema resuelve y cuál fue tu contribución principal.</p>
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>CSS</span>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Ver Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" target="_blank">Código <i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://via.placeholder.com/400x250" alt="Imagen del Proyecto 2">
+                    <div class="project-info">
+                        <h3>Nombre del Proyecto 2</h3>
+                        <p>Descripción breve del proyecto. Explica qué problema resuelve y cuál fue tu contribución principal.</p>
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Ver Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <a href="#" target="_blank">Código <i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <section id="sobre-mi" class="about-section">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-content">
+                <p>
+                    Soy un desarrollador con experiencia en [menciona tus años de experiencia o principales habilidades]. Me encanta resolver problemas complejos y aprender constantemente sobre nuevas tecnologías. Mi objetivo es construir productos que no solo funcionen bien, sino que también ofrezcan una gran experiencia de usuario.
+                </p>
+                <p>
+                    Cuando no estoy programando, me gusta [menciona un hobby o interés], lo que me ayuda a mantenerme creativo y con una perspectiva fresca.
+                </p>
+            </div>
+        </section>
+        
+        <section id="contacto" class="contact-section">
+            <h2 class="section-title">Contacto</h2>
+            <p>¿Interesado en colaborar? ¡Envíame un mensaje!</p>
+            <a href="mailto:[tu.email@ejemplo.com]" class="contact-button">
+                <i class="fa-solid fa-envelope"></i> Di Hola
+            </a>
+        </section>
     </main>
-    <footer class="site-footer">
-      © 2025 Designed by Mateo Arce. All rights reserved.
+
+    <footer class="footer">
+        <p>&copy; 2025 - [Tu Nombre]. Todos los derechos reservados.</p>
     </footer>
-  </body>
+
+</body>
 </html>
