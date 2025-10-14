@@ -1,155 +1,218 @@
-/* === GENERAL === */
-body {
-  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  margin: 0;
-  color: #111;
-  background: #fff;
-}
-
-/* === HEADER === */
-header {
-  background: white;
-  border-bottom: 1px solid #ddd;
-  padding: 1.2rem 2rem;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav a {
-  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.2rem;
-}
-
-nav h1 {
-  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
-  font-weight: 500;
-  font-size: 1.6rem;
-}
-
-/* === GRID === */
-main.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 50vh 50vh;
-  height: calc(100vh - 80px);
-  width: 100%;
-}
-
-/* === BLOQUES === */
-.block {
-  position: relative; /* mantiene referencias internas */
-  text-decoration: none;
-  color: #000;
-  overflow: hidden; /* evita desbordes */
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.block:hover {
-  transform: scale(1.01);
-  filter: brightness(1.1);
-  cursor: pointer;
-}
-
-.block {
-  position: relative;
-  text-decoration: none;
-  color: #000;
-  overflow: hidden;
-  transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.block h2 {
-  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-weight: 400;
-  font-size: 2.9rem;
-  margin: 0;
-  line-height: 0.8;
-  letter-spacing: -1px;
-  z-index: 2;
-}
-
-/* Lista de proyectos: independiente del h2 */
-.block ul {
-  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
-  position: absolute;
-  bottom: 2.5rem;
-  right: 2.5rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  text-align: right;
-  z-index: 2;
-}
-
-/* === COLORES Y PLACEHOLDERS === */
-.industrial {
-  background: #8f8f8f;
-  grid-column: 1;
-  grid-row: 1; /* <-- antes: 1 / span 2  */
-}
-
-.placeholder1 {
-  background: #cfcfcf;
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.code {
-  background: #7b7b7b;
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.placeholder2 {
-  background: #a8a8a8;
-  grid-column: 1;
-  grid-row: 2; /* debajo de industrial, sin superponer */
-}
-
-.ux {
-  background: #bdbdbd;
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.placeholder3 {
-  background: #e0e0e0;
-  grid-column: 3;
-  grid-row: 2;
-}
-
-/* === RESPONSIVE === */
-@media (max-width: 900px) {
-  main.grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    height: auto;
+  /* === GENERAL === */
+  body {
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    margin: 0;
+    color: #111;
+    background: #fff;
   }
 
-  .block {
-    height: 60vh;
+  /* === HEADER === */
+  header {
+    background: white;
+    border-bottom: 1px solid #ddd;
+    padding: 1.2rem 2rem;
   }
 
-  .block h2 {
-    top: 1.5rem;
-    left: 1.5rem;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav a {
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+
+  nav h1 {
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    font-weight: 500;
     font-size: 1.6rem;
   }
 
-  .block ul {
-    bottom: 1.5rem;
-    right: 1.5rem;
+  /* === GRID === */
+  main.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50vh 50vh;
+    height: calc(100vh - 80px);
+    width: 100%;
   }
+
+  /* === BLOQUES === */
+  .block {
+    position: relative; /* mantiene referencias internas */
+    text-decoration: none;
+    color: #000;
+    overflow: hidden; /* evita desbordes */
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .block {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    overflow: hidden;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+
+  .block h2 {
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    text-decoration: none !important;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-weight: 400;
+    font-size: 2.9rem;
+    margin: 0;
+    line-height: 0.8;
+    letter-spacing: -1px;
+    z-index: 2;
+  }
+
+  /* Lista de proyectos: independiente del h2 */
+  .block ul {
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    text-decoration: none !important;
+    color: #111;
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    text-align: right;
+    transition: color 0.3s ease;
+    z-index: 2;
+  }
+
+  /* === ENLACES DE PROYECTOS (minimal hover line) === */
+.block ul li a {
+  position: relative;
+  text-decoration: none;      /* elimina subrayado por defecto */
+  color: #111;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+/* Línea animada al hover */
+.block ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;               /* distancia entre texto y línea */
+  width: 0%;
+  height: 2px;                /* grosor de la línea */
+  background-color: #111;     /* color de la línea */
+  transition: width 0.3s ease;
+}
+
+/* Hover: cambia color + línea que se extiende */
+.block ul li a:hover {
+  color: #000;                /* un poco más oscuro al hover */
+}
+
+.block ul li a:hover::after {
+  width: 100%;                /* anima el subrayado de izquierda a derecha */
+}
+
+
+  /* === COLORES Y PLACEHOLDERS === */
+  .industrial {
+    background: #8f8f8f;
+    grid-column: 1;
+    grid-row: 1; /* <-- antes: 1 / span 2  */
+  }
+
+  .placeholder1 {
+    background: #cfcfcf;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .code {
+    background: #7b7b7b;
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .placeholder2 {
+    background: #a8a8a8;
+    grid-column: 1;
+    grid-row: 2; /* debajo de industrial, sin superponer */
+  }
+
+  .ux {
+    background: #bdbdbd;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .placeholder3 {
+    background: #e0e0e0;
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 900px) {
+    main.grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      height: auto;
+    }
+
+    .block {
+      height: 60vh;
+    }
+
+    .block h2 {
+      top: 1.5rem;
+      left: 1.5rem;
+      font-size: 1.6rem;
+    }
+
+    .block ul {
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
+  }
+  /* === PLACEHOLDERS CON GIFS === */
+
+  .placeholder1 {
+    background-image: url("assets/grilla.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .placeholder2 {
+    background-image: url("assets/processing.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .placeholder3 {
+    background-image: url("assets/processing.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    grid-column: 3;
+    grid-row: 2;
+  }
+
+  /* === QUITAR TODOS LOS SUBRAYADOS DE LINKS === */
+a {
+  text-decoration: none !important;
+  color: inherit; /* mantiene el color del texto actual */
 }
