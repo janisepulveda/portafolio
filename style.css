@@ -185,7 +185,7 @@
   /* === PLACEHOLDERS CON GIFS === */
 
   .placeholder1 {
-    background-image: url("assets/grilla.gif");
+    background-image: url("assets/code/p5js.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -194,7 +194,7 @@
   }
 
   .placeholder2 {
-    background-image: url("assets/processing.gif");
+    background-image: url("assets/code/p5js.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -203,7 +203,7 @@
   }
 
   .placeholder3 {
-    background-image: url("assets/processing.gif");
+    background-image: url("assets/code/p5js.gif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
