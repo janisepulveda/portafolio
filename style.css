@@ -216,3 +216,30 @@ a {
   text-decoration: none !important;
   color: inherit; /* mantiene el color del texto actual */
 }
+
+/* === ENLACE SUBRAYADO === */
+.link-subrayado {
+  position: relative;
+  color: #111;
+  font-weight: 400;
+  text-decoration: none; /* quitamos el subrayado por defecto */
+}
+
+/* línea visible por defecto */
+.link-subrayado::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;           /* distancia entre texto y línea */
+  width: 100%;
+  height: 1.5px;          /* grosor de la línea */
+  background-color: #111; /* color del subrayado */
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;           /* subrayado sutil */
+}
+
+/* efecto al pasar el cursor */
+.link-subrayado:hover::after {
+  opacity: 1;
+  background-color: #000;
+}
