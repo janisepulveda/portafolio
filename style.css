@@ -243,3 +243,53 @@ a {
   opacity: 1;
   background-color: #000;
 }
+
+/* ===== SECCION ABOUT ===== */
+.about-page {
+  max-width: 900px;
+  margin: 60px auto 80px auto;
+  padding: 0 28px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  flex-direction: row;
+  width: 100%;
+}
+
+.about-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #f2f2f2;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.07);
+  flex-shrink: 0;
+}
+
+.about-text-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.about-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 0 16px 0;
+  color: #111;
+}
+
+.about-text-content p {
+  font-size: 1.18rem;
+  color: #363636;
+  margin: 0 0 10px 0;
+  line-height: 1.7;
+  max-width: 650px;
+}
