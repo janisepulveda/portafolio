@@ -1,71 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Janis Sepúlveda Vera</title>
-    <link rel="stylesheet" href="https://use.typekit.net/rlo4oiq.css">
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio — Janis Sepúlveda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+    body, html { width:100%; min-height:100%; background:white; }
+
+    /* HEADER */
+    .hero { position:relative; width:100%; height:80px; }
+    .logo {
+      position:absolute; top:20px; left:20px; z-index:10;
+    }
+    .logo img { width:80px; height:auto; }
+
+    .menu {
+      position:absolute; top:20px; left:50%; transform:translateX(-50%); z-index:10;
+    }
+    .menu ul { display:flex; gap:3rem; list-style:none; }
+    .menu ul li a {
+      text-decoration:none;
+      font-size:1.2rem;
+      font-family:'Playfair Display', serif;
+      color:#1A3B2F;
+    }
+
+    .email-btn {
+      position:absolute; top:20px; right:20px; z-index:10;
+    }
+    .email-btn a {
+      text-decoration:none; background:#1A3B2F; color:white;
+      padding:0.5rem 1rem; border-radius:8px;
+    }
+
+    /* HERO IMAGE */
+    .hero-image {
+      width:100%;
+      height:60vh;
+      background-image:url('https://via.placeholder.com/2000x1200/F5F5F5/CCCCCC?text=Collage+Full');
+      background-size:cover;
+      background-position:center;
+    }
+
+    /* FOOTER BAR */
+    .footer-bar {
+      position:fixed; bottom:0; left:0; width:100%;
+      background:#1A3B2F; color:white;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:1.3rem 1.5rem;
+      font-size:0.95rem; z-index:99;
+      opacity:0; transform:translateY(100%); transition:all 0.4s ease;
+      pointer-events:none;
+    }
+    .footer-bar.visible {
+      opacity:1; transform:translateY(0%); pointer-events:auto;
+    }
+
+    @media(max-width:768px){
+      .menu ul { gap:1.2rem; }
+      .logo img { width:60px; }
+      .footer-bar {
+        flex-direction:column; gap:4px; text-align:center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="projects.html" class="nav-left">projects</a>
-            <h1><a href="index.html">janis sepúlveda vera</a></h1>
-            <a href="about.html" class="nav-right">about</a>
-        </nav>
-    </header>
+  <header class="hero">
+    <a href="index.html" class="logo">
+      <img src="https://via.placeholder.com/80x40/1A3B2F/FFFFFF?text=Logo" alt="Logo">
+    </a>
 
-    <main class="grid">
+    <nav class="menu">
+      <ul>
+        <li><a href="trabajos.html">Trabajos</a></li>
+        <li><a href="#">Sobre mí</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
 
-        <div class="block industrial">
-            <div class="content">
-                <h2>→ industrial<br>design</h2>
-                <ul>
-                    <li><a href="html/mueblesExpositores.html" data-bg="assets/industrial/mueble1.png">muebles expositores</a></li>
-                    <li><a href="html/portaprecios.html" data-bg="assets/industrial/portaprecio.png">portaprecios</a></li>
-                    <li><a href="html/packagings.html" data-bg="assets/industrial/packaging1.png">packagings</a></li>
-                    <!-- <li><a href="html/gravitys.html" data-bg="assets/industrial/proyecto4.jpg">gravitys</a></li> -->
-                    <li><a href="html/flanjes.html" data-bg="assets/industrial/flanje1.png">flanjes</a></li>
-                    <li><a href="html/caddies.html" data-bg="assets/industrial/caddie03.png">caddies</a></li>
-                    <!-- <li><a href="html/proyectos/industrial_p7.html" data-bg="assets/industrial/proyecto7.jpg">título proyecto 7</a></li> -->
-                </ul>
-            </div>
-        </div>
+    <div class="email-btn">
+      <a href="mailto:v.sepulvedajanis@gmail.com">Email</a>
+    </div>
+  </header>
 
-        <div class="block placeholder placeholder1"></div>
+  <div class="hero-image"></div>
 
-        <div class="block code">
-            <div class="content">
-                <h2>→ code :]</h2>
-                <ul>
-                    <li><a href="html/auna.html" data-bg="assets/code/proyecto1.jpg">auna</a></li>
-                    <li><a href="html/disenoAbierto.html" data-bg="assets/code/proyecto2.jpg">diseño abierto</a></li>
-                    <!-- <li><a href="proyectos/code_p3.html" data-bg="assets/code/proyecto3.jpg">conectaUDP</a></li> -->
-                    <li><a href="html/p5.html" data-bg="assets/code/proyecto3.jpg">p5 experiments</a></li>
-                </ul>
-            </div>
-        </div>
+  <div class="footer-bar" id="footerBar">
+    <span>© janis sepulveda</span>
+    <a href="mailto:v.sepulvedajanis@gmail.com" style="color:white; text-decoration:underline;">v.sepulvedajanis@gmail.com</a>
+    <span>2025</span>
+  </div>
 
-        <div class="block placeholder placeholder2"></div>
-
-        <div class="block ux">
-            <div class="content">
-                <h2>→ ux</h2>
-                <ul>
-                    <li><a href="html/conectaUDP.html" data-bg="assets/ux/proyecto1.jpg">conectaUDP</a></li>
-                    <!-- <li><a href="proyectos/ux_p2.html" data-bg="assets/ux/proyecto2.jpg">título proyecto 2</a></li> -->
-
-                </ul>
-            </div>
-        </div>
-
-        <div class="block placeholder placeholder3"></div>
-
-    </main>
-
-    <script src="script.js"></script>
+  <script>
+    const footer = document.getElementById("footerBar");
+    window.addEventListener("scroll", () => {
+      const scrollPos = window.scrollY + window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      if(scrollPos >= docHeight - 5){
+        footer.classList.add("visible");
+      } else {
+        footer.classList.remove("visible");
+      }
+    });
+  </script>
 
 </body>
 </html>

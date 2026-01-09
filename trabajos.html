@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trabajos — Janis Sepúlveda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <a href="index.html" class="logo">
+    <img src="https://via.placeholder.com/80x40/1A3B2F/FFFFFF?text=Logo" alt="Logo">
+  </a>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="trabajos.html">Trabajos</a></li>
+      <li><a href="#">Sobre mí</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="email-btn">
+    <a href="mailto:v.sepulvedajanis@gmail.com">Email</a>
+  </div>
+</header>
+
+<main class="content">
+  <h1 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem; color:#1A3B2F;">
+  </h1>
+
+  <div class="gallery">
+
+    <div class="item" data-id="muebles">
+      <img src="assets/industrial/mueble1.png" alt="">
+      <div class="overlay"><span>Muebles Expositores</span></div>
+    </div>
+
+    <div class="item" data-id="portaprecios">
+      <img src="assets/industrial/portaprecio.png" alt="">
+      <div class="overlay"><span>Portaprecios</span></div>
+    </div>
+
+    <div class="item" data-id="packagings">
+      <img src="assets/industrial/packaging1.png" alt="">
+      <div class="overlay"><span>Packagings</span></div>
+    </div>
+
+    <div class="item" data-id="flanjes">
+      <img src="assets/industrial/flanje1.png" alt="">
+      <div class="overlay"><span>Flanjes</span></div>
+    </div>
+
+    <div class="item" data-id="caddies">
+      <img src="assets/industrial/caddie02.png" alt="">
+      <div class="overlay"><span>Caddies</span></div>
+    </div>
+
+    <div class="item" data-id="auna">
+      <img src="assets/code/aunaPortada.png" alt="">
+      <div class="overlay"><span>AUNA</span></div>
+    </div>
+
+    <div class="item" data-id="disenoabierto">
+      <img src="assets/ux/mockup.png" alt="">
+      <div class="overlay"><span>App Diseño Abierto</span></div>
+    </div>
+
+    <div class="item" data-id="p5">
+      <img src="assets/code/animacionP5.gif" alt="">
+      <div class="overlay"><span>Experimentación p5.js</span></div>
+    </div>
+
+    <div class="item" data-id="conectaudp">
+      <img src="assets/ux/udp2.png" alt="">
+      <div class="overlay"><span>ConectaUDP</span></div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<div class="footer-bar" id="footerBar">
+  <span>© janis sepulveda</span>
+  <a href="mailto:v.sepulvedajanis@gmail.com" style="color:white; text-decoration:underline;">v.sepulvedajanis@gmail.com</a>
+  <span>2025</span>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="cerrarModal" class="modal-close">&times;</span>
+
+    <h2 id="modalTitulo"></h2>
+    <p id="modalAno"></p>
+
+    <div class="modal-body">
+      <div class="modal-descripcion">
+        <p id="modalDescripcion"></p>
+        <p><strong>Tags:</strong> <span id="modalTags"></span></p>
+      </div>
+      <div class="modal-fotos" id="modalFotos"></div>
+    </div>
+
+  </div>
+</div>
+
+<script src="trabajos.js"></script>
+<script>
+  const footer = document.getElementById("footerBar");
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY + window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    footer.classList.toggle("visible", scrollPos >= docHeight - 5);
+  });
+</script>
+
+</body>
+</html>
