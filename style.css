@@ -218,10 +218,42 @@ html, body {
   object-fit: cover;
 }
 
+/* ===== SOBRE MÍ ===== */
+.sobremi-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.sobremi-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.3rem;
+  color: #333;
+}
+
+.sobremi-foto img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .sobremi-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .sobremi-foto img {
+    max-width: 300px;
+    margin: 0 auto;
   }
 }
 

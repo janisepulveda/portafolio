@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí — Janis Sepúlveda</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hero">
+  <a href="index.html" class="logo">
+    <img src="https://via.placeholder.com/80x40/1A3B2F/FFFFFF?text=Logo" alt="Logo">
+  </a>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="trabajos.html">Trabajos</a></li>
+      <li><a href="sobremi.html">Sobre mí</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="email-btn">
+    <a href="mailto:v.sepulvedajanis@gmail.com">Email</a>
+  </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="content">
+  <section class="sobremi-container">
+    <div class="sobremi-text">
+      <h1 style="font-family: 'Playfair Display', serif; font-size: 2rem; color:#1A3B2F; margin-bottom:1rem;">Sobre mí</h1>
+      <p>Hola, soy Janis Sepúlveda, diseñadora enfocada en proyectos phygital y experiencias sensoriales. Mi trabajo combina diseño, tecnología y atención a las experiencias subjetivas de los usuarios.</p>
+      <p>He desarrollado proyectos de diseño industrial, UX/UI y experimentación digital, siempre con un enfoque en la funcionalidad, estética y la interacción significativa.</p>
+      <p>Me apasiona traducir experiencias complejas en soluciones tangibles y atractivas, utilizando herramientas digitales y físicas de manera integrada.</p>
+    </div>
+    <div class="sobremi-foto">
+      <img src="assets/sobre-mi/mi-foto.jpg" alt="Foto de Janis Sepúlveda">
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<div class="footer-bar" id="footerBar">
+  <span>© janis sepulveda</span>
+  <a href="mailto:v.sepulvedajanis@gmail.com" style="color:white; text-decoration:underline;">v.sepulvedajanis@gmail.com</a>
+  <span>2025</span>
+</div>
+
+<script>
+  const footer = document.getElementById("footerBar");
+  window.addEventListener("scroll", () => {
+    const scrollPos = window.scrollY + window.innerHeight;
+    const docHeight = document.documentElement.scrollHeight;
+    footer.classList.toggle("visible", scrollPos >= docHeight - 5);
+  });
+</script>
+
+</body>
+</html>
