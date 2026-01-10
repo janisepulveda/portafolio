@@ -5,70 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio — Janis Sepúlveda</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
-    body, html { width:100%; min-height:100%; background:white; }
-
-    /* HEADER */
-    .hero { position:relative; width:100%; height:80px; }
-    .logo {
-      position:absolute; top:20px; left:20px; z-index:10;
-    }
-    .logo img { width:80px; height:auto; }
-
-    .menu {
-      position:absolute; top:20px; left:50%; transform:translateX(-50%); z-index:10;
-    }
-    .menu ul { display:flex; gap:3rem; list-style:none; }
-    .menu ul li a {
-      text-decoration:none;
-      font-size:1.2rem;
-      font-family:'Playfair Display', serif;
-      color:#1A3B2F;
-    }
-
-    .email-btn {
-      position:absolute; top:20px; right:20px; z-index:10;
-    }
-    .email-btn a {
-      text-decoration:none; background:#1A3B2F; color:white;
-      padding:0.5rem 1rem; border-radius:8px;
-    }
-
-    /* HERO IMAGE */
-    .hero-image {
-      width:100%;
-      height:60vh;
-      background-image:url('https://via.placeholder.com/2000x1200/F5F5F5/CCCCCC?text=Collage+Full');
-      background-size:cover;
-      background-position:center;
-    }
-
-    /* FOOTER BAR */
-    .footer-bar {
-      position:fixed; bottom:0; left:0; width:100%;
-      background:#1A3B2F; color:white;
-      display:flex; justify-content:space-between; align-items:center;
-      padding:1.3rem 1.5rem;
-      font-size:0.95rem; z-index:99;
-      opacity:0; transform:translateY(100%); transition:all 0.4s ease;
-      pointer-events:none;
-    }
-    .footer-bar.visible {
-      opacity:1; transform:translateY(0%); pointer-events:auto;
-    }
-
-    @media(max-width:768px){
-      .menu ul { gap:1.2rem; }
-      .logo img { width:60px; }
-      .footer-bar {
-        flex-direction:column; gap:4px; text-align:center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="hero">
     <a href="index.html" class="logo">
       <img src="https://via.placeholder.com/80x40/1A3B2F/FFFFFF?text=Logo" alt="Logo">
@@ -78,7 +19,7 @@
       <ul>
         <li><a href="trabajos.html">Trabajos</a></li>
         <li><a href="sobremi.html">Sobre mí</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
 
@@ -87,8 +28,44 @@
     </div>
   </header>
 
+  <!-- HERO IMAGE -->
   <div class="hero-image"></div>
 
+  <!-- BLOQUE CONECTEMOS -->
+  <div class="conectemos">
+    conectemos :)
+  </div>
+  <div class="conectemos-icons">
+    <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 
+                 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25
+                 c-.97 0-1.75-.78-1.75-1.75s.78-1.75 
+                 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 11.25h-3v-5.5
+                 c0-1.38-.03-3.15-1.92-3.15-1.92 0-2.21 1.5-2.21 3.05v5.6h-3v-10h2.88v1.36h.04c.4-.76 
+                 1.37-1.56 2.82-1.56 3.02 0 3.58 1.99 3.58 4.57v5.63z"/>
+      </svg>
+    </a>
+    <a href="https://github.com/tu-usuario" target="_blank" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 0c-6.63 0-12 5.37-12 12 
+                 0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58
+                 0-.29-.01-1.04-.02-2.05-3.34.73-4.04-1.61-4.04-1.61
+                 -.55-1.41-1.34-1.79-1.34-1.79-1.09-.75.08-.74.08-.74
+                 1.2.08 1.83 1.23 1.83 1.23 1.07 1.83 2.8 1.3 3.48.99
+                 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93
+                 0-1.31.47-2.38 1.23-3.22-.12-.3-.53-1.52.12-3.17
+                 0 0 1.01-.32 3.3 1.23a11.52 11.52 0 0 1 3-.4c1.02.01 2.04.14 3 .4
+                 2.28-1.55 3.29-1.23 3.29-1.23 .65 1.65.24 2.87.12 3.17
+                 .77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.62-5.48 5.92
+                 .43.37.81 1.1.81 2.22 0 1.6-.01 2.89-.01 3.28
+                 0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12
+                 c0-6.63-5.37-12-12-12z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
   <div class="footer-bar" id="footerBar">
     <span>© janis sepulveda</span>
     <a href="mailto:v.sepulvedajanis@gmail.com" style="color:white; text-decoration:underline;">v.sepulvedajanis@gmail.com</a>
