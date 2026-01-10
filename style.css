@@ -13,10 +13,33 @@ html, body {
 }
 
 /* ===== HEADER ===== */
-.hero {
-  position: relative;
+/* Contenedor para controlar el espacio */
+.works-container {
   width: 100%;
-  height: 80px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente si hay altura */
+  padding: 20px 20px;      /* Espacio para que no toque los bordes */
+  overflow: hidden;        /* Evita que cualquier resto de imagen cause scroll */
+  background-color: white; 
+}
+
+/* La imagen propiamente tal */
+.works-main-img {
+  width: 100%;             /* Se adapta al ancho del contenedor */
+  max-width: 1400px;       /* No dejes que crezca más de esto para que no se vea gigante en monitores 4K */
+  height: auto;            /* Mantiene la proporción original */
+  display: block;
+  margin: 0 auto;          /* Asegura el centrado */
+  
+  /* Animación opcional para que aparezca suave al cargar */
+  opacity: 0;
+  animation: fadeInWorks 1.5s ease-out forwards;
+}
+
+@keyframes fadeInWorks {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .logo {
