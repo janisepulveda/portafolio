@@ -19,7 +19,7 @@ html, body {
   display: flex;
   justify-content: center; /* Centra horizontalmente */
   align-items: center;     /* Centra verticalmente si hay altura */
-  padding: 20px 20px;      /* Espacio para que no toque los bordes */
+  padding: 40px 20px;      /* Espacio para que no toque los bordes */
   overflow: hidden;        /* Evita que cualquier resto de imagen cause scroll */
   background-color: white; 
 }
@@ -72,7 +72,7 @@ html, body {
   text-decoration: none;
   font-size: 1.2rem;
   font-family: 'Playfair Display', serif;
-  color: #1A3B2F;
+  color: #4b7730;
 }
 
 /* ===== HEADER BOTONES ===== */
@@ -93,12 +93,12 @@ html, body {
   height: 36px;
   border-radius: 6px;
   transition: transform 0.3s ease, color 0.3s ease;
-  color: #1A3B2F; /* icono verde */
+  color: #4b7730; /* icono verde */
 }
 
 .header-buttons a:hover {
   transform: scale(1.2);
-  color: #3a5a44; /* verde hover */
+  color: #4b7730; /* verde hover */
 }
 
 .header-buttons svg {
@@ -197,14 +197,15 @@ html, body {
   margin-bottom: 8px;
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
-  color: #1A3B2F; /* mismo verde */
+  color: #4b7730; /* mismo verde */
 }
 
 .conectemos-icons {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-bottom: 20px; /* espacio sobre el footer */
+  /* Aumenta este margen para que las redes no queden bajo el footer */
+  margin-bottom: 120px; 
 }
 
 .conectemos-icons a {
