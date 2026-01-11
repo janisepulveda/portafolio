@@ -10,9 +10,7 @@
 <body class="contacto-body">
 
   <header class="hero">
-    <a href="index.html" class="logo">
-      <img src="assets/placeholder.png" alt="Logo">
-    </a>
+    <a href="index.html" class="logo"><img src="assets/placeholder.png" alt="Logo"></a>
     <nav class="menu">
       <ul>
         <li><a href="trabajos.html">Trabajos</a></li>
@@ -20,81 +18,86 @@
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    <div class="email-btn">
-      <a href="mailto:v.sepulvedajanis@gmail.com">Email</a>
-    </div>
+    <div class="email-btn"><a href="mailto:v.sepulvedajanis@gmail.com">Email</a></div>
   </header>
 
   <main class="contacto-wrapper">
     <div class="postal-container">
       <img src="assets/contacto/contacto.png" alt="Postal" class="postal-img">
-      
       <form id="my-form" class="postal-form" action="https://formspree.io/f/mwvvegwq" method="POST">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" rows="3" required></textarea>
-        </div>
-
+        <div class="form-group"><label>Nombre</label><input type="text" name="nombre" required></div>
+        <div class="form-group"><label>Email</label><input type="email" name="email" required></div>
+        <div class="form-group"><label>Mensaje</label><textarea name="mensaje" rows="3" required></textarea></div>
         <button type="button" id="submit-btn" class="send-btn">Enviar mensaje</button>
       </form>
     </div>
 
-    <div class="estampilla-flotante">
-      <p>CHOOSE A STAMP</p>
-      <img src="assets/contacto/estampilla1.png" alt="Estampilla">
+    <div class="stamps-container">
+      <div class="estampilla-flotante est-1">
+        <img src="assets/contacto/estampilla1.png">
+      </div>
+      <div class="estampilla-flotante est-2"><img src="assets/contacto/estampilla2.png"></div>
+      <div class="estampilla-flotante est-3"><img src="assets/contacto/estampilla3.png"></div>
+      <div class="estampilla-flotante est-4"><img src="assets/contacto/instruccion.png"></div>
+      <!-- <div class="estampilla-flotante est-5"><img src="assets/contacto/estampilla5.png"></div> -->
     </div>
-    
   </main>
 
   <script>
+    const stamps = document.querySelectorAll('.estampilla-flotante');
+
+    stamps.forEach(stamp => {
+      let isDragging = false;
+      let startX, startY, initialLeft, initialTop;
+
+      stamp.addEventListener('mousedown', (e) => {
+        e.preventDefault(); 
+        isDragging = true;
+        
+        // --- EL TRUCO --- 
+        // Al tocarla, le quitamos la clase est-1, est-2, etc. 
+        // Esto elimina la rotación del CSS y la deja en 0 grados.
+        const classes = Array.from(stamp.classList);
+        const rotClass = classes.find(c => c.startsWith('est-'));
+        if (rotClass) stamp.classList.remove(rotClass);
+
+        const rect = stamp.getBoundingClientRect();
+        initialLeft = rect.left;
+        initialTop = rect.top;
+        startX = e.clientX;
+        startY = e.clientY;
+
+        stamp.style.position = 'fixed';
+        stamp.style.left = initialLeft + 'px';
+        stamp.style.top = initialTop + 'px';
+        stamp.style.right = 'auto';
+        stamp.style.zIndex = '1000';
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        stamp.style.left = (initialLeft + dx) + 'px';
+        stamp.style.top = (initialTop + dy) + 'px';
+      });
+
+      document.addEventListener('mouseup', () => { isDragging = false; });
+    });
+
+    // Formspree
     const form = document.getElementById('my-form');
     const btn = document.getElementById('submit-btn');
-
-    btn.addEventListener('click', async function() {
-      // 1. Validar que los campos no estén vacíos
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      const formData = new FormData(form);
-      
-      // 2. Cambiar visual del botón mientras envía
+    btn.addEventListener('click', async () => {
+      if (!form.checkValidity()) { form.reportValidity(); return; }
       btn.innerText = "Enviando...";
-      btn.disabled = true;
-
-      try {
-        const response = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          // 3. ÉXITO: El botón cambia a Enviado
-          btn.innerText = "Enviado";
-          btn.style.backgroundColor = "#4b7730"; // Cambia a verde
-          form.reset(); // Limpia la postal
-        } else {
-          btn.innerText = "Error";
-          btn.disabled = false;
-        }
-      } catch (error) {
-        btn.innerText = "Error de red";
-        btn.disabled = false;
-      }
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) { btn.innerText = "Enviado"; form.reset(); }
     });
   </script>
-
 </body>
 </html>

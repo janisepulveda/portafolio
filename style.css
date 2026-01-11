@@ -345,38 +345,30 @@ html, body {
   height: 100vh;
 }
 
-.contacto-body .menu ul li a {
-  color: #4b7730 !important; 
-}
-
 .contacto-wrapper {
   width: 100%;
   height: calc(100vh - 80px);
   display: flex;
-  justify-content: center; /* Cambiado a center para equilibrar con la estampilla */
+  justify-content: flex-start; 
   align-items: center;
   padding: 40px 80px;
   margin-top: 60px;
-  gap: 40px; /* Espacio entre postal y estampilla */
+  gap: 40px; 
+  position: relative;
 }
 
 .postal-container {
   position: relative; 
-  width: auto; /* Ajustado para que no ocupe todo el ancho */
+  width: auto;
   max-width: 1000px; 
-  display: flex;
-  justify-content: center;
 }
 
 .postal-img {
   width: 100% !important;
-  max-width: 100% !important;
-  height: auto !important;
   max-height: 70vh !important;
   object-fit: contain;
 }
 
-/* FORMULARIO SOBRE LA POSTAL */
 .postal-form {
   position: absolute;
   top: 38%;    
@@ -387,17 +379,10 @@ html, body {
   gap: 18px;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
 .form-group label {
-  font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
   color: #4b7730;
   text-transform: uppercase;
-  margin-bottom: -5px;
 }
 
 .form-group input, 
@@ -410,10 +395,9 @@ html, body {
   font-size: 1rem;
   outline: none;
   color: #333;
-}
-
-.form-group textarea {
-  resize: none;
+  resize: none; /* Esto evita que el usuario pueda agrandar el cuadro */
+  display: block;
+  width: 100%;
 }
 
 .send-btn {
@@ -424,84 +408,63 @@ html, body {
   cursor: pointer;
   font-size: 0.8rem;
   text-transform: uppercase;
-  margin-top: 5px;
-  transition: opacity 0.3s;
 }
 
-.send-btn:hover {
-  opacity: 0.8;
-}
-
-/* ===== NUEVA SECCIÓN: ESTAMPILLA FLOTANTE ===== */
+/* ===== ESTAMPILLAS (SISTEMA FINAL) ===== */
 .estampilla-flotante {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 20;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 20;
+  user-select: none;
+  touch-action: none;
 }
 
 .estampilla-flotante p {
-    font-size: 9px;
-    color: #4b7730;
-    margin-bottom: 10px;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: 1px;
+  font-size: 15px;
+  color: #4b7730;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-align: center;
+  max-width: 150px;
 }
 
-/* Forzamos el tamaño de la imagen con alta especificidad */
-.contacto-wrapper .estampilla-flotante img {
-    width: 130px !important;  /* Cambia este valor a tu gusto */
-    height: auto !important;
-    display: block !important;
-    max-width: 200px !important;
+.estampilla-flotante img {
+  width: 140px !important; /* Tamaño agrandado */
+  height: auto !important;
+  cursor: grab;
+  display: block;
+  transition: transform 0.2s ease;
 }
 
-/* ===== RESPONSIVE ===== */
+/* Rotaciones iniciales */
+.est-1 img { transform: rotate(-5deg); }
+.est-2 img { transform: rotate(10deg); }
+.est-3 img { transform: rotate(-8deg); }
+/* .est-4 img { transform: rotate(5deg); }
+.est-5 img { transform: rotate(-12deg); } */
+
+/* Posiciones a la derecha */
+.est-1 { top: 26%; right: 18%; }
+.est-2 { top: 38%; right: 5%; }
+.est-3 { top: 60%; right: 18%; }
+.est-4 { top: 12%; right: 7%; }
+/* .est-5 { top: 80%; right: 14%; } */
+
+/* Cambios específicos para la estampilla 4 */
+.est-4 {
+  z-index: 1 !important; /* La deja en la capa del fondo */
+  pointer-events: none;  /* Primera capa de seguridad: el mouse la ignora */
+}
+
+.est-4 img {
+  width: 300px !important; /* Tamaño solicitado */
+  cursor: default !important; /* Cambia la mano por la flecha normal */
+}
+
+/* Responsive */
 @media (max-width: 1100px) {
-    .contacto-wrapper {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 20px;
-    }
-    .estampilla-flotante {
-        margin-left: 0;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width: 900px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .sobremi-container {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .menu ul {
-    gap: 1.2rem;
-  }
-  .logo img {
-    width: 60px;
-  }
-  .gallery {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .footer-bar {
-    flex-direction: column;
-    gap: 4px;
-    text-align: center;
-  }
-  .postal-form {
-    width: 85%;
-    right: 7%;
-    top: 35%;
-  }
-  .send-btn:active {
-    transform: scale(0.98);
-    background-color: #3e2723;
-  }
+  .stamps-container { display: none; }
+  .contacto-wrapper { justify-content: center; padding: 20px; }
 }
