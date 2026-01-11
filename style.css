@@ -353,34 +353,35 @@ html, body {
   width: 100%;
   height: calc(100vh - 80px);
   display: flex;
-  justify-content: flex-start;
+  justify-content: center; /* Cambiado a center para equilibrar con la estampilla */
   align-items: center;
   padding: 40px 80px;
   margin-top: 60px;
+  gap: 40px; /* Espacio entre postal y estampilla */
 }
 
 .postal-container {
-  position: relative; /* Importante para que el form se pegue a la imagen */
-  width: 100%;
+  position: relative; 
+  width: auto; /* Ajustado para que no ocupe todo el ancho */
   max-width: 1000px; 
   display: flex;
   justify-content: center;
 }
 
 .postal-img {
-  width: 1000% !important;
-  max-width: 1000% !important;
+  width: 100% !important;
+  max-width: 100% !important;
   height: auto !important;
-  max-height: 80vh !important;
+  max-height: 70vh !important;
   object-fit: contain;
 }
 
 /* FORMULARIO SOBRE LA POSTAL */
 .postal-form {
   position: absolute;
-  top: 38%;    /* Ajusta para que coincida con tus líneas */
-  right: 8%;   /* Ajusta para el lado derecho */
-  width: 38%;  /* Ancho del área de texto */
+  top: 38%;    
+  right: 8%;   
+  width: 38%;  
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -403,7 +404,7 @@ html, body {
 .form-group textarea {
   background: transparent;
   border: none;
-  border-bottom: 1.2px solid #4b7730; /* Línea estilo postal */
+  border-bottom: 1.2px solid #4b7730; 
   padding: 6px 0;
   font-family: 'Playfair Display', serif;
   font-size: 1rem;
@@ -416,7 +417,7 @@ html, body {
 }
 
 .send-btn {
-  background-color: #5d4037; /* Café oscuro */
+  background-color: #5d4037; 
   color: white;
   border: none;
   padding: 10px;
@@ -431,7 +432,44 @@ html, body {
   opacity: 0.8;
 }
 
+/* ===== NUEVA SECCIÓN: ESTAMPILLA FLOTANTE ===== */
+.estampilla-flotante {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.estampilla-flotante p {
+    font-size: 9px;
+    color: #4b7730;
+    margin-bottom: 10px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Forzamos el tamaño de la imagen con alta especificidad */
+.contacto-wrapper .estampilla-flotante img {
+    width: 130px !important;  /* Cambia este valor a tu gusto */
+    height: auto !important;
+    display: block !important;
+    max-width: 200px !important;
+}
+
 /* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .contacto-wrapper {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+    }
+    .estampilla-flotante {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+}
+
 @media (max-width: 900px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -439,9 +477,6 @@ html, body {
   .sobremi-container {
     grid-template-columns: 1fr;
     gap: 20px;
-  }
-  .contacto-wrapper {
-    padding: 40px;
   }
 }
 
@@ -465,31 +500,8 @@ html, body {
     right: 7%;
     top: 35%;
   }
-  .contacto-wrapper {
-    padding: 20px;
-    margin-top: 80px;
-  }
   .send-btn:active {
-  transform: scale(0.98);
-  background-color: #3e2723;
-  }
-  /* ===== ESTADOS DEL BOTÓN DE ENVÍO (POSTAL) ===== */
-
-  /* Estado cuando el botón está bloqueado (mientras envía o ya se envió) */
-  .send-btn:disabled {
-    cursor: not-allowed;
-    filter: grayscale(0.3); /* Lo hace un poco más opaco */
-    transform: none !important; /* Quita el efecto de escala al pasar el mouse */
-  }
-
-  /* Clase opcional por si quieres animar la transición del color */
-  .send-btn {
-    transition: background-color 0.4s ease, opacity 0.3s ease, transform 0.2s ease;
-  }
-
-  /* Esto asegura que si el JS le pone el color verde, se vea bien */
-  .send-btn[style*="background-color"] {
-    color: white !important;
-    font-weight: 600;
+    transform: scale(0.98);
+    background-color: #3e2723;
   }
 }
