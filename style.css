@@ -316,26 +316,60 @@ html, body {
   object-fit: cover;
 }
 
-/* ===== SOBRE MÍ ===== */
+/* ===== SOBRE MÍ (Actualizado a 50/50) ===== */
 .sobremi-container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  margin-top: 2rem;
-  align-items: center;
+  display: flex;             /* Cambiamos a Flex para mejor control */
+  align-items: center;       /* Centra verticalmente el texto con la imagen */
+  gap: 60px;                 /* Espacio entre las dos columnas */
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.sobremi-text {
+  flex: 1;                   /* Toma el 50% del espacio */
+}
+
+.sobremi-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: #4b7730;
+  margin-bottom: 2rem;
 }
 
 .sobremi-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1.3rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
   color: #333;
+  text-align: justify;       /* Opcional: para un look más editorial */
+}
+
+.sobremi-foto {
+  flex: 1;                   /* Toma el otro 50% del espacio */
+  display: flex;
+  justify-content: center;   /* Centra la imagen dentro de su mitad */
 }
 
 .sobremi-foto img {
-  width: 100%;
+  width: 150%;
+  max-width: 500px;          /* Evita que la foto se agrande demasiado en pantallas enormes */
+  height: auto;
   border-radius: 12px;
   object-fit: cover;
+}
+
+/* Responsivo: En celulares se pone uno abajo del otro */
+@media (max-width: 900px) {
+  .sobremi-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .sobremi-text, .sobremi-foto {
+    flex: none;
+    width: 100%;
+  }
 }
 
 /* ===== SECCIÓN POSTAL (CONTACTO) ===== */
