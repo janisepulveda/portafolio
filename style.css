@@ -422,6 +422,29 @@ html, body {
   .modal-content { min-height: 420px; }
 }
 
+/* CV preview modal */
+.cv-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 4000;
+  align-items: center;
+  justify-content: center;
+}
+.cv-modal-content {
+  width: 92%;
+  max-width: 1000px;
+  background: white;
+  border-radius: 8px;
+  padding: 18px;
+  position: relative;
+}
+.cv-modal .modal-close {
+  top: 10px;
+  right: 12px;
+}
+
 /* ===== SOBRE MÍ (Actualizado a 50/50) ===== */
 .sobremi-container {
   display: flex;             /* Cambiamos a Flex para mejor control */

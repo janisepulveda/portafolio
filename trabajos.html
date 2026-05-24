@@ -23,7 +23,7 @@
   </nav>
 
   <div class="email-btn">
-    <a href="mailto:v.sepulvedajanis@gmail.com">Email</a>
+    <a href="#" id="cvPreviewBtn">CV</a>
   </div>
 </header>
 
@@ -85,6 +85,14 @@
   </div>
 </main>
 
+  <!-- CV PREVIEW MODAL -->
+  <div id="cvModal" class="cv-modal">
+    <div class="cv-modal-content">
+      <span id="cerrarCvModal" class="modal-close">&times;</span>
+      <iframe id="cvFrame" src="assets/cv_janis.pdf" frameborder="0" style="width:100%; height:80vh;"></iframe>
+    </div>
+  </div>
+
 <!-- FOOTER -->
 <div class="footer-bar" id="footerBar">
   <span>© janis sepulveda</span>
@@ -119,6 +127,22 @@
     const docHeight = document.documentElement.scrollHeight;
     footer.classList.toggle("visible", scrollPos >= docHeight - 5);
   });
+  
+  // CV preview modal
+  const cvBtn = document.getElementById('cvPreviewBtn');
+  const cvModal = document.getElementById('cvModal');
+  const cerrarCv = document.getElementById('cerrarCvModal');
+  const cvFrame = document.getElementById('cvFrame');
+
+  cvBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    cvModal.style.display = 'flex';
+    // ensure fresh load
+    cvFrame.src = 'assets/cv_janis.pdf';
+  });
+
+  cerrarCv.addEventListener('click', () => { cvModal.style.display = 'none'; cvFrame.src = ''; });
+  cvModal.addEventListener('click', (e) => { if(e.target === cvModal){ cvModal.style.display='none'; cvFrame.src = ''; } });
 </script>
 
 </body>
