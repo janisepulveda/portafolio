@@ -97,6 +97,18 @@ const proyectos = {
       
     ]
   }
+  ,postdata:{
+    titulo:"Postdata — Examen DNO3265",
+    ano:"2026",
+    descripcion:"Postdata es una web para cerrar ciclos, soltar cosas y ayudarte a sacar eso que llevas en el pecho. Proyecto examen DNO3265 — Diseño de Interacción y Experiencia (MADA UC).",
+    tags:"UX — Interacción — DNO3265 — MADA UC",
+    fotos:[
+      "assets/ux/post-data-portada.png",
+      "assets/ux/post-data-home.png",
+      "assets/ux/post-data-post.png",
+      "assets/ux/post-data-publicar.png"
+    ]
+  }
 };
 
 document.querySelectorAll(".item").forEach(item=>{
