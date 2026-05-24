@@ -674,9 +674,9 @@ html, body {
   .content { padding: 60px 16px 120px; }
   .gallery { grid-template-columns: 1fr; gap: 14px; }
   .logo img { width: 56px; }
-  .hamburger { display: block; position: absolute; top: 12px; right: 12px; z-index: 1002; }
-  .menu { position: fixed; top: 0; left: 0; right: 0; transform: translateY(-110%); opacity: 0; background: white; padding: 64px 20px 20px; z-index: 1001; }
-  .menu.open { transform: translateY(0); opacity: 1; }
+  .hamburger { display: block !important; position: fixed; top: 12px; right: 12px; z-index: 2000; }
+  .menu { position: fixed; top: 0; left: 0; right: 0; transform: translateY(-110%); opacity: 0; pointer-events: none; background: white; padding: 64px 20px 20px; z-index: 1999; transition: transform .28s ease, opacity .2s; }
+  .menu.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .menu ul { flex-direction: column; gap: 12px; background: transparent; align-items: flex-start; }
   .menu ul li a { font-size: 1rem; }
   .email-btn a, .header-buttons a { font-size: 0.95rem; padding: 6px 10px; }
