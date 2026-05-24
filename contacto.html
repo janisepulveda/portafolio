@@ -11,6 +11,12 @@
 
   <header class="hero">
     <a href="index.html" class="logo"><img src="assets/placeholder.png" alt="Logo"></a>
+    
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
     <nav class="menu">
       <ul>
         <li><a href="trabajos.html">Trabajos</a></li>
@@ -160,6 +166,18 @@
       });
       if (response.ok) { btn.innerText = "Enviado"; form.reset(); }
     });
+
+    // Hamburger menu
+    (function(){
+      const btnMenu = document.querySelector('.hamburger');
+      const menu = document.querySelector('.menu');
+      if(!btnMenu || !menu) return;
+      btnMenu.addEventListener('click', ()=>{
+        const open = menu.classList.toggle('open');
+        btnMenu.setAttribute('aria-expanded', open);
+      });
+      menu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ menu.classList.remove('open'); btnMenu.setAttribute('aria-expanded', false);}));
+    })();
   </script>
 </body>
 </html>

@@ -16,6 +16,12 @@
       <img src="assets/placeholder.png" alt="Logo">
     </a>
 
+    <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
     <nav class="menu">
       <ul>
         <li><a href="trabajos.html">Trabajos</a></li>
@@ -87,6 +93,18 @@
         footer.classList.remove("visible");
       }
     });
+
+    // Hamburger menu
+    (function(){
+      const btn = document.querySelector('.hamburger');
+      const menu = document.querySelector('.menu');
+      if(!btn || !menu) return;
+      btn.addEventListener('click', ()=>{
+        const open = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open);
+      });
+      menu.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ menu.classList.remove('open'); btn.setAttribute('aria-expanded', false);}));
+    })();
   </script>
 
 </body>
