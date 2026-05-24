@@ -53,27 +53,42 @@
       let startX, startY, initialLeft, initialTop;
 
       stamp.addEventListener('mousedown', (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         isDragging = true;
-        
-        // --- EL TRUCO --- 
-        // Al tocarla, le quitamos la clase est-1, est-2, etc. 
-        // Esto elimina la rotación del CSS y la deja en 0 grados.
-        const classes = Array.from(stamp.classList);
-        const rotClass = classes.find(c => c.startsWith('est-'));
-        if (rotClass) stamp.classList.remove(rotClass);
 
-        const rect = stamp.getBoundingClientRect();
-        initialLeft = rect.left;
-        initialTop = rect.top;
+        // Medimos primero con la rotación aplicada
+        const rectBefore = stamp.getBoundingClientRect();
+        initialLeft = rectBefore.left;
+        initialTop = rectBefore.top;
         startX = e.clientX;
         startY = e.clientY;
 
+        // Fijamos posición para iniciar el drag exactamente donde está
         stamp.style.position = 'fixed';
         stamp.style.left = initialLeft + 'px';
         stamp.style.top = initialTop + 'px';
         stamp.style.right = 'auto';
         stamp.style.zIndex = '1000';
+
+        // Ahora removemos la clase de rotación, pero compensamos cualquier
+        // cambio en el bounding box para que el elemento no salte
+        const classes = Array.from(stamp.classList);
+        const rotClass = classes.find(c => c.startsWith('est-'));
+        if (rotClass) {
+          stamp.classList.remove(rotClass);
+          // después de quitar la clase, medir de nuevo
+          const rectAfter = stamp.getBoundingClientRect();
+          const dxShift = rectAfter.left - rectBefore.left;
+          const dyShift = rectAfter.top - rectBefore.top;
+          // compensar el cambio
+          const compensatedLeft = initialLeft - dxShift;
+          const compensatedTop = initialTop - dyShift;
+          stamp.style.left = compensatedLeft + 'px';
+          stamp.style.top = compensatedTop + 'px';
+          // actualizar iniciales para el cálculo del drag
+          initialLeft = compensatedLeft;
+          initialTop = compensatedTop;
+        }
       });
 
       document.addEventListener('mousemove', (e) => {
@@ -83,6 +98,51 @@
         stamp.style.left = (initialLeft + dx) + 'px';
         stamp.style.top = (initialTop + dy) + 'px';
       });
+
+      // Touch support
+      stamp.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        isDragging = true;
+        const touch = e.touches[0];
+        // measure before removing rotation class
+        const rectBefore = stamp.getBoundingClientRect();
+        initialLeft = rectBefore.left;
+        initialTop = rectBefore.top;
+        startX = touch.clientX;
+        startY = touch.clientY;
+        stamp.style.position = 'fixed';
+        stamp.style.left = initialLeft + 'px';
+        stamp.style.top = initialTop + 'px';
+        stamp.style.right = 'auto';
+        stamp.style.zIndex = '1000';
+
+        const classes = Array.from(stamp.classList);
+        const rotClass = classes.find(c => c.startsWith('est-'));
+        if (rotClass) {
+          stamp.classList.remove(rotClass);
+          const rectAfter = stamp.getBoundingClientRect();
+          const dxShift = rectAfter.left - rectBefore.left;
+          const dyShift = rectAfter.top - rectBefore.top;
+          const compensatedLeft = initialLeft - dxShift;
+          const compensatedTop = initialTop - dyShift;
+          stamp.style.left = compensatedLeft + 'px';
+          stamp.style.top = compensatedTop + 'px';
+          initialLeft = compensatedLeft;
+          initialTop = compensatedTop;
+        }
+      }, { passive: false });
+
+      document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        const dx = touch.clientX - startX;
+        const dy = touch.clientY - startY;
+        stamp.style.left = (initialLeft + dx) + 'px';
+        stamp.style.top = (initialTop + dy) + 'px';
+        e.preventDefault();
+      }, { passive: false });
+
+      document.addEventListener('touchend', () => { isDragging = false; });
 
       document.addEventListener('mouseup', () => { isDragging = false; });
     });

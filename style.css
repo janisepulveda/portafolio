@@ -631,3 +631,34 @@ html, body {
   .stamps-container { display: none; }
   .contacto-wrapper { justify-content: center; padding: 20px; }
 }
+
+/* ===== RESPONSVIE: TABLET HORIZONTAL & MOBILE ===== */
+@media (max-width: 1100px) {
+  /* Tablet landscape adjustments */
+  .content { padding: 80px 24px 160px; }
+  .gallery { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .logo img { width: 64px; }
+  .menu ul { gap: 1.5rem; }
+  .modal-content { padding: 24px; max-width: 920px; }
+  .modal-body { grid-template-columns: 1fr 1.3fr; }
+  .modal-main { min-height: 320px; }
+  .modal-thumbs img { width: 84px; height: 64px; }
+}
+
+@media (max-width: 700px) {
+  /* Mobile adjustments */
+  .content { padding: 60px 16px 120px; }
+  .gallery { grid-template-columns: 1fr; gap: 14px; }
+  .logo img { width: 56px; }
+  .menu { top: 12px; left: 12px; transform: none; }
+  .menu ul { flex-direction: column; gap: 12px; background: transparent; }
+  .menu ul li a { font-size: 1rem; }
+  .email-btn a, .header-buttons a { font-size: 0.95rem; padding: 6px 10px; }
+  .modal-content { width: 95%; padding: 18px; }
+  .modal-body { grid-template-columns: 1fr; }
+  .modal-main { min-height: 260px; }
+  .modal-main-img { max-height: 45vh; }
+  .modal-thumbs { gap: 8px; }
+  .modal-thumbs img { width: 68px; height: 52px; }
+  .postal-form { position: relative; top: 0; right: 0; width: 100%; padding: 12px; }
+}
