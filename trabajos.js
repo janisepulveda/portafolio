@@ -103,10 +103,10 @@ const proyectos = {
     descripcion:"Postdata es una web para cerrar ciclos, soltar cosas y ayudarte a sacar eso que llevas en el pecho. Proyecto examen DNO3265 — Diseño de Interacción y Experiencia (MADA UC).",
     tags:"UX — Interacción — DNO3265 — MADA UC",
     fotos:[
-      "assets/ux/post-data-portada.png",
-      "assets/ux/post-data-home.png",
-      "assets/ux/post-data-post.png",
-      "assets/ux/post-data-publicar.png"
+      "assets/ux/post-data-portada-opt.png",
+      "assets/ux/post-data-home-opt.png",
+      "assets/ux/post-data-post-opt.png",
+      "assets/ux/post-data-publicar-opt.png"
     ]
   }
 };
@@ -124,11 +124,74 @@ document.querySelectorAll(".item").forEach(item=>{
     fotosContainer.innerHTML = "";
 
     if(data.fotos && data.fotos.length > 0){
-      data.fotos.forEach(f=> {
-        const img = document.createElement("img");
-        img.src = f;
-        fotosContainer.appendChild(img);
+      // Main image
+      const mainWrap = document.createElement("div");
+      mainWrap.className = "modal-main";
+      const mainImg = document.createElement("img");
+      mainImg.className = "modal-main-img";
+      mainImg.src = data.fotos[0];
+      mainImg.alt = data.titulo + " - imagen principal";
+      mainWrap.appendChild(mainImg);
+
+      // navigation arrows
+      const nav = document.createElement("div");
+      nav.className = "modal-nav";
+      const prevBtn = document.createElement("button");
+      prevBtn.setAttribute("aria-label","Anterior");
+      prevBtn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>';
+      const nextBtn = document.createElement("button");
+      nextBtn.setAttribute("aria-label","Siguiente");
+      nextBtn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>';
+      nav.appendChild(prevBtn);
+      nav.appendChild(nextBtn);
+      mainWrap.appendChild(nav);
+
+      fotosContainer.appendChild(mainWrap);
+
+      // Thumbnails
+      const thumbs = document.createElement("div");
+      thumbs.className = "modal-thumbs";
+
+      let currentIndex = 0;
+
+      const showImage = (index) => {
+        if(index < 0) index = data.fotos.length - 1;
+        if(index >= data.fotos.length) index = 0;
+        currentIndex = index;
+        mainImg.src = data.fotos[currentIndex];
+        thumbs.querySelectorAll("img").forEach((i, ii) => {
+          i.classList.toggle("active", ii === currentIndex);
+        });
+      };
+
+      data.fotos.forEach((f, idx) => {
+        const t = document.createElement("img");
+        t.src = f;
+        t.alt = data.titulo + " - miniatura " + (idx+1);
+        if(idx === 0) t.classList.add("active");
+        t.addEventListener("click", () => {
+          showImage(idx);
+        });
+        thumbs.appendChild(t);
       });
+
+      prevBtn.addEventListener("click", () => { showImage(currentIndex - 1); });
+      nextBtn.addEventListener("click", () => { showImage(currentIndex + 1); });
+
+      // keyboard navigation while modal open
+      const keyHandler = (e) => {
+        if(document.getElementById("modal").style.display !== "flex") return;
+        if(e.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if(e.key === 'ArrowRight') showImage(currentIndex + 1);
+      };
+      document.addEventListener('keydown', keyHandler);
+
+      // cleanup listener when modal closes
+      const cleanup = () => { document.removeEventListener('keydown', keyHandler); };
+      document.getElementById("cerrarModal").addEventListener('click', cleanup);
+      document.getElementById("modal").addEventListener('click',(e)=>{ if(e.target === e.currentTarget){ cleanup(); }});
+
+      fotosContainer.appendChild(thumbs);
     }
 
     document.getElementById("modal").style.display="flex";

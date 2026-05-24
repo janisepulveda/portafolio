@@ -276,6 +276,11 @@ html, body {
   gap: 12px;
 }
 
+/* Keep modal size stable when changing images */
+.modal-content {
+  min-height: 480px;
+}
+
 .modal-close {
   position: absolute;
   top: 14px;
@@ -293,7 +298,7 @@ html, body {
 
 .modal-body {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 26px;
   margin-top: 10px;
 }
@@ -314,6 +319,84 @@ html, body {
   width: 100%;
   border-radius: 6px;
   object-fit: cover;
+}
+
+/* Main image + thumbnails inside modal */
+.modal-main-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #f6f6f6;
+}
+
+.modal-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+  padding: 0 8px;
+}
+
+.modal-nav button {
+  pointer-events: auto;
+  background: rgba(255,255,255,0.95);
+  border: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(10,10,10,0.08);
+  transition: transform .12s ease;
+}
+
+.modal-nav button:hover { transform: translateY(-1px) scale(1.02); }
+
+.modal-nav svg { width: 18px; height: 18px; fill: #1A3B2F; }
+
+.modal-thumbs {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.modal-thumbs img {
+  width: 88px;
+  height: 66px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: transform .15s ease, opacity .15s ease, box-shadow .15s;
+}
+
+.modal-thumbs img:hover { transform: scale(1.03); opacity: 1; }
+
+.modal-thumbs img.active {
+  box-shadow: 0 0 0 3px rgba(26,59,47,0.15);
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .modal-body { grid-template-columns: 1fr; }
+  .modal-thumbs img { width: 72px; height: 54px; }
 }
 
 /* ===== SOBRE MÍ (Actualizado a 50/50) ===== */
