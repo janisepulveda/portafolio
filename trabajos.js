@@ -146,6 +146,8 @@ document.querySelectorAll(".item").forEach(item=>{
       nav.appendChild(nextBtn);
       mainWrap.appendChild(nav);
 
+      // no inline badge inside image; tags stay in the left description column
+
       fotosContainer.appendChild(mainWrap);
 
       // Thumbnails
@@ -190,6 +192,8 @@ document.querySelectorAll(".item").forEach(item=>{
       const cleanup = () => { document.removeEventListener('keydown', keyHandler); };
       document.getElementById("cerrarModal").addEventListener('click', cleanup);
       document.getElementById("modal").addEventListener('click',(e)=>{ if(e.target === e.currentTarget){ cleanup(); }});
+
+      // ensure inline tags show up in the description (they're already set above)
 
       fotosContainer.appendChild(thumbs);
     }
