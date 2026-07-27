@@ -1,4 +1,13 @@
 const proyectos = {
+  silueta:{
+    titulo:"Siluetra",
+    ano:"WIP — Magíster",
+    descripcion:"Siluetra es mi investigación en desarrollo para la tesis del Magíster en Diseño Avanzado. El proyecto busca explorar la escritura como gesto visual",
+    tags:"Código — Tesis — WIP — MADA UC",
+    fotos:[
+      "assets/code/espiral.jpg"
+    ]
+  },
   muebles:{
     titulo:"Colección Muebles Expositores",
     ano:"2024",
